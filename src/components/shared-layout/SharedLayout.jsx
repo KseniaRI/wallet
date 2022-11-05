@@ -1,16 +1,16 @@
 import { Suspense } from "react"
 import { Outlet } from "react-router-dom"
-import { SharedLayout } from "components/shared-layout/SharedLayout"
+import { Header } from "components/header/Header"
+import { SideBar } from "components/sideBar/SideBar"
 
-const DashboardPage = () => {
+export const SharedLayout = () => {
     return (
         <>
-            <SharedLayout />
+            <Header />
+            <SideBar />
             <Suspense fallback={<h1>Loading...</h1>}>
                 <Outlet />
             </Suspense>
-        </>   
+        </> 
     )
 }
-
-export default DashboardPage;
