@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/101.6fe4d43b.chunk.js","mappings":"0JAMA,UANmB,WACf,OACI,uCAEP,C","sources":["components/diagramTab/DiagramTab.jsx"],"sourcesContent":["const DiagramTab = () => {\n    return (\n        <div>DiagramTab</div>\n    )\n}\n\nexport default DiagramTab;"],"names":[],"sourceRoot":""}
