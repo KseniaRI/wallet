@@ -1,23 +1,37 @@
-import { ButtonAddTransactions } from "components/buttonAddTransactions/ButtonAddTransactions";
+import { ThLeft, ThRight, TransactionHeader, TransactionTable, Td } from "./HomeTab.styled"
 
-const HomeTab = () => {
+export const HomeTab = () => {
     return (
-        <>
-            <table>
+        <TransactionTable >
+            <TransactionHeader>
                 <tr>
-                    <th>Date</th>
+                    <ThLeft>Date</ThLeft>
                     <th>Type</th>
                     <th>Category</th>
                     <th>Comment</th>
                     <th>Amount</th>
-                    <th>Balance</th>
+                    <ThRight>Balance</ThRight>
                 </tr>
-                <tr>1</tr>
-                <tr>2</tr>
-            </table>
-            <ButtonAddTransactions />
-        </>
+            </TransactionHeader>
+            <tbody>
+                <tr>
+                    <Td>1</Td>
+                    <Td>2</Td>
+                    <Td>3</Td>
+                    <Td>4</Td>
+                    <Td>5</Td>
+                    <Td>6</Td>
+                </tr>
+                <tr>
+                    <Td>7</Td>
+                    <Td>8</Td>
+                    <Td>9</Td>
+                    <Td>10</Td>
+                    <Td>11</Td>
+                    <Td>12</Td>
+                </tr>
+            </tbody>
+        </TransactionTable>
     )
 }
 
-export default HomeTab;

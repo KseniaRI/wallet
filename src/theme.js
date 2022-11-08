@@ -1,13 +1,20 @@
+import '../src/stylesheet/fonts.css';
+
 export const theme = {
   colors: {
     mainTxtColor: '#000',
     secondaryTxtColor: '#BDBDBD',
     lightTxtColor: '#fff',
     lightBackgroundColor: '#fff',
+    backgroundColor: '#E7EAF2',
     accentColor: '#4A56E2',
     secondaryAccentColor: '#6E78E8',
     expenseColor: '#FF6596',
     incomeColor: '#24CCA7',
+  },
+  fonts: {
+    body: "Circe",
+    title: "Poppins"
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: {
@@ -22,7 +29,7 @@ export const theme = {
   },
   lineHeights: {
     normal: 1.5,
-    little: 1.125,
+    small: 1.125,
   },
   borders: {
     none: 'none',

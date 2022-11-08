@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 // import { useDispatch } from 'react-redux';
 
 const DashboardPage = lazy(() => import('../pages/dashboardPage/DashboardPage'));
-const HomeTab = lazy(() => import('../components/homeTab/HomeTab'));
+const Home = lazy(() => import('../components/home/Home'));
 const DiagramTab = lazy(() => import('../components/diagramTab/DiagramTab'));
 
 
@@ -19,7 +19,7 @@ export const App = () => {
   return (
     <Routes>
       <Route path='/dashboard' element={<DashboardPage />}>
-         <Route path='home' element={<HomeTab />} />
+         <Route path='home' element={<Home />} />
          <Route path='diagram' element={<DiagramTab/>} />
       </Route>
     </Routes>
