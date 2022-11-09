@@ -1,16 +1,13 @@
 import { Box } from "components/Box";
-import { ButtonLogout, Container, StyledHeader, LogoLink, StyledHandySvgLogo, StyledHandySvgLogout } from "./header.styled";
-import LogoSvg from '../../images/icons/logo.svg';
-import LogoutSvg from '../../images/icons/logout.svg';
+import { ButtonLogout, Container, StyledHeader, Svg } from "./header.styled";
+import Sprite from '../../images/icons/symbol-defs.svg';
+import { Logo } from "components/logo/Logo";
 
 export const Header = () => {
     return (
         <StyledHeader>
             <Container>
-                <LogoLink to="/dashboard/home">
-                    <StyledHandySvgLogo src={LogoSvg} width="40" height="40"/>
-                    Wallet
-                </LogoLink>
+                <Logo/>
                 <Box as="div"
                     display="flex"
                     alignItems="center"
@@ -20,7 +17,9 @@ export const Header = () => {
                     <span>Name</span>
                     <Box as="div" width="1px" height="30px" mr={15} ml={15} backgroundColor="secondaryTxtColor"/>
                     <ButtonLogout type="button">
-                        <StyledHandySvgLogout src={LogoutSvg} width="18" height="18"/>
+                    <Svg>
+                        <use href={`${Sprite}#icon-logout`}></use>
+                    </Svg>
                         Logout
                     </ButtonLogout>
                 </Box>

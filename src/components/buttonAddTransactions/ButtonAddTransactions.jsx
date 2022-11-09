@@ -1,8 +1,12 @@
-import { ButtonAdd } from "./ButtonAdd.styled";
-import { IoAdd } from 'react-icons/io5';
+import { ButtonAdd, Svg } from "./ButtonAdd.styled";
+import Sprite from '../../images/icons/symbol-defs.svg';
 
 export const ButtonAddTransactions = () => {
     return (
-        <ButtonAdd type="button"><IoAdd color="white" size={30} /></ButtonAdd>
+        <ButtonAdd type="button">
+            <Svg>
+                <use href={`${Sprite}#icon-plus`}></use>
+            </Svg>
+        </ButtonAdd>
     )
 }

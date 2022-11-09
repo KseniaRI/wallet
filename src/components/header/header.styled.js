@@ -1,6 +1,4 @@
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
-import {HandySvg} from 'handy-svg';
 
 export const StyledHeader = styled.header`
     position: fixed;
@@ -20,22 +18,12 @@ padding-left: 85px;
 padding-right: 85px;
 `;
 
-export const LogoLink = styled(NavLink)`
-display: flex;
-align-items: center;
-font-family: ${p => p.theme.fonts.title}, sans-serif;
-font-weight: ${p => p.theme.fontWeights.bold};
-font-size: ${p => p.theme.fontSizes.l};
-line-height: ${p => p.theme.lineHeights.normal};
-color: ${p => p.theme.colors.mainTxtColor};
-`;
-
-export const StyledHandySvgLogo = styled(HandySvg)`
+export const Svg = styled.svg`
+width: 18px;
+height: 18px;
 margin-right: 20px;
 `;
-export const StyledHandySvgLogout = styled(HandySvg)`
-margin-right: 10px;
-`;
+
 
 export const ButtonLogout = styled.button`
 display: inline-flex;
@@ -46,4 +34,12 @@ font-size: inherit;
 line-height: inherit;
 background-color: ${p => p.theme.colors.lightBackgroundColor};
 border: ${p => p.theme.borders.none};
+border-radius: ${p => p.theme.radii.button};
+transition:  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+
+    &:hover,
+    &:focus {
+     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+      0px 2px 1px 0px rgba(0, 0, 0, 0.2);
+    } 
 `;

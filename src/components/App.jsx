@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 const DashboardPage = lazy(() => import('../pages/dashboardPage/DashboardPage'));
 const Home = lazy(() => import('../components/home/Home'));
 const DiagramTab = lazy(() => import('../components/diagramTab/DiagramTab'));
-
+const RegistrationPage = lazy(() => import('../pages/registrationPage/RegistrationPage'));
 
 export const App = () => {
 
@@ -18,6 +18,7 @@ export const App = () => {
 
   return (
     <Routes>
+      <Route path='/register' element={<RegistrationPage />} />
       <Route path='/dashboard' element={<DashboardPage />}>
          <Route path='home' element={<Home />} />
          <Route path='diagram' element={<DiagramTab/>} />
