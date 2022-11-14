@@ -12,7 +12,7 @@ padding: 40px 65px 60px 65.5px;
 transform: translate(-50%, -50%);
 z-index: 1;
 width: 540px;
-height: 616px;
+/* height: 616px; */
 background-color: ${p => p.theme.colors.lightBackgroundColor};
 border-radius: ${p => p.theme.radii.form};
 `;

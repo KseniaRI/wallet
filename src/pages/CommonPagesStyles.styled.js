@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import ellipseLeft from '../../images/ellipse-left.png';
-import ellipseRight from '../../images/ellipse-right.png';
-import registerImg from '../../images/register.png'
+import ellipseLeft from '../images/ellipse-left.png';
+import ellipseRight from '../images/ellipse-right.png';
+
 
 export const Container = styled.div`
     position: relative;
@@ -24,7 +24,7 @@ export const Container = styled.div`
     height: 547px;
     }
 
-&::after {
+    &::after {
     content: "";
     position: absolute;
     background-image: url(${ellipseRight});
@@ -45,24 +45,3 @@ export const RightBackground = styled.div`
     height: 720px;
     background-color: ${p => p.theme.colors.secondaryBackgroundColor};
 `;
-
-export const LeftBackground = styled.div`
-    position: relative;
-    width: 560px;
-    height: 720px;
-   
-    &::after{
-        content: "";
-        position: absolute;
-        background-image: url(${registerImg});
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 410px;
-        height: 413px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%)
-    }
-   
-`;
-

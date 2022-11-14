@@ -14,9 +14,9 @@ color: ${p => p.theme.colors.accentColor};
 
 transition:  all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-&:first-of-type{
+
     margin-bottom: 20px;
-}
+
 
 &:hover,
 &:focus{

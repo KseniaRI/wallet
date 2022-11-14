@@ -1,5 +1,7 @@
 import { RegistrationForm } from "components/registrationForm/RegistrationForm";
-import { Container, LeftBackground, RightBackground } from "./RegistrationPage.styled";
+import { Container, RightBackground } from "pages/CommonPagesStyles.styled";
+import { LeftBackground } from "./RegistrationPage.styled";
+
 
 const RegistrationPage = () => {
     return (
