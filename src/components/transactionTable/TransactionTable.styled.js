@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const TransactionTable = styled.table`
+export const Transaction = styled.table`
 position: absolute;
 z-index: 1;
 width: 700px;

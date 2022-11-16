@@ -5,16 +5,20 @@ import { Formik } from "formik";
 import { nanoid } from 'nanoid';
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import {TfiClose} from 'react-icons/tfi'
+import { TfiClose } from 'react-icons/tfi'
+import Datetime from 'react-datetime';
+import "react-datetime/css/react-datetime.css";
+import moment from 'moment';
+import 'moment/locale/it';
 import { Backdrop, ButtonClose, CategoryField, CommentField, Modal, ModalTitle, Option, ShortField, StyledForm} from "./ModalAddTransaction.styled";
+import { renderMobileInput } from "utils/renderInput/RenderInput";
 
 const modalRoot = document.querySelector('#modal-root');
 
 const idCategory = nanoid();
 const idAmount = nanoid();
-const idDate = nanoid();
 const idComment = nanoid();
-const currentDate = new Date()
+const currentDate = moment().format("DD.MM.YYYY");;
 
 const ModalAddTransaction = ({ onClose }) => {
     
@@ -55,9 +59,9 @@ const handleBackdropClick = evt => {
                             <Option value="green">Education</Option>
                             <Option value="blue">The rest</Option>
                         </CategoryField>
-                        <Box as="div" display="flex" width="100%" justifyContent="space-between" mb={40}>
-                            <ShortField label="Amount" type="text" name="amount" id={idAmount} placeholder="0.00" required/>
-                            <ShortField label="Date" type="text" name="date" id={idDate} placeholder={`${currentDate}`} required/>
+                        <Box as="div" display="flex" width="100%" justifyContent="space-between" alignItems="flex-end" mb={40}>
+                            <ShortField label="Amount" type="text" name="amount" id={idAmount} placeholder="0.00" required />
+                            <Datetime renderInput={renderMobileInput} dateFormat="DD.MM.YYYY" timeFormat={false} initialValue={`${currentDate}`} />
                         </Box>
                         <CommentField label="Comment" type="text" name="comment" id={idComment} placeholder="Comment" />
 

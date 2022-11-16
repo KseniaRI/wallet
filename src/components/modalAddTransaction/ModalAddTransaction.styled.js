@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { Field, Form } from "formik";
 
 
+
 export const Backdrop = styled.div`
   position: fixed;
   top: 0;
@@ -35,8 +36,8 @@ transform: translate(-50%, -50%);
 width: 540px;
 height: 617px;
 padding-top: 40px;
-padding-right: 65px;
-padding-left: 65px;
+padding-right: 63px;
+padding-left: 67px;
 border: ${p => p.theme.borders.none};
 border-radius: ${p => p.theme.radii.form};
 background-color: ${p => p.theme.colors.lightBackgroundColor};
@@ -78,8 +79,9 @@ width: 100%;
 margin-bottom: 50px;
 `
 export const ShortField = styled(StyledField)`
-/* flex-basis: calc((100% - 25px) / 2); */
-width: calc((100% - 25px) / 2);
+padding-bottom: 10px;
+text-align: center;
+width: 190px;
 `;
 
 export const Option = styled.option`
@@ -91,5 +93,6 @@ box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(25px);
 border-radius: ${p => p.theme.radii.form};
 `;
+
 
 
