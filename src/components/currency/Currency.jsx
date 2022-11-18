@@ -1,39 +1,38 @@
 import { Box } from "components/Box"
-import { CurrencyTable} from "./Currency.styled"
+import { useEffect, useState } from "react"
+import { fetchLatestRates } from "services/currency-api"
+import { CurrencyTable, TBody, THead} from "./Currency.styled"
 
 export const Currency = () => {
+    const [latestRates, setLatestRates] = useState([]);
+
+    useEffect(() => {
+        const getLatestRates = async () => {
+            try {
+                await fetchLatestRates().then(result => setLatestRates(Object.entries(result)))
+            } catch (error) {
+                console.log(error.message);
+            }
+        }
+        getLatestRates();
+    }, []);
+
     return (
         <CurrencyTable>
-            <Box as="thead"
-                height={60}
-                fontSize="m"
-                letterHeight="normal">
+            <THead>
                 <tr>
                     <th>Currency</th>
-                    <th>Buying</th>
-                    <th>Selling</th>
+                    <th>Rate</th>
                 </tr>
-            </Box>
-            <Box as="tbody"
-                height={153}
-                fontSize="s"
-                letterHeight="normal">
-                <tr>
-                    <td>USD</td>
-                    <td>1</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>EUR</td>
-                    <td>1</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>RUB</td>
-                    <td>1</td>
-                    <td>2</td>
-                </tr>
-            </Box>
+            </THead>
+            <TBody>
+                
+                {latestRates.length > 0 && latestRates.map((currency) =>
+                    <tr key={currency[0]}>
+                        <td>{currency[0].replace("EUR","")}</td>
+                        <td>{currency[1].toFixed(2)}</td>
+                    </tr>)}     
+            </TBody>
             <Box as="tfoot"
                 height={134}/>         
         </CurrencyTable>

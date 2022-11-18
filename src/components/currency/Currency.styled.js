@@ -8,6 +8,8 @@ color: ${p => p.theme.colors.lightTxtColor};
 background-color: ${p => p.theme.colors.accentColor};
 width: 348px;
 height: 347px;
+padding-left: 70px; 
+padding-right: 70px;
 
 &::before{
     content: '';
@@ -33,7 +35,33 @@ height: 347px;
    height: 134px;
     width: 100%; 
 }
+
+tr td{
+  text-align: right;
+}
+
+tr td:first-of-type{
+  text-align: left;
+}
 `;
 
+export const THead = styled.thead`
+height: 60px;
+font-size: ${p => p.theme.fontSizes.m};
+line-height: ${p => p.theme.lineHeights.normal};
 
+th{
+   text-align: right;  
+}
+
+th:first-of-type{
+  text-align: left;
+}
+`;
+
+export const TBody = styled.tbody`
+height: 153px;
+font-size: ${p => p.theme.fontSizes.m};
+line-height: ${p => p.theme.lineHeights.normal};
+`;
 
