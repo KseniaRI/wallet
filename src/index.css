@@ -1,14 +1,6 @@
 @import '../node_modules/modern-normalize/modern-normalize.css';
 
-
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-} */
-
 body {
-  margin: 0;
   font-family: "Circe", sans-serif;
   color: mainTxtColor;
 }
@@ -24,17 +16,15 @@ ul{
   list-style: none;
 }
 
-p{
+h1,h2,h3,h4,p{
   margin: 0;
-  padding: 0; 
-}
-
-button, input{
   padding: 0;
 }
 
-h1,h2,h3,h4{
-  margin: 0;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 table {
@@ -42,5 +32,5 @@ table {
 }
 
 tr {
-  height: 51px;
+  height: 50px;
 }

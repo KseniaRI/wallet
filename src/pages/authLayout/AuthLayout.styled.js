@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import ellipseLeft from '../images/ellipse-left.png';
-import ellipseRight from '../images/ellipse-right.png';
+import ellipseLeft from '../../images/ellipse-left.png';
+import ellipseRight from '../../images/ellipse-right.png';
 
 
 export const Container = styled.div`

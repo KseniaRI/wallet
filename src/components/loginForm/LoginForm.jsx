@@ -1,37 +1,33 @@
 import { Formik } from 'formik';
-// import * as Yup from 'yup';
+import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
 import { Logo } from 'components/logo/Logo';
 import { FieldWrap, IconWrap, StyledField, StyledForm, Svg } from '../registrationForm/RegistrationForm.styled';
 import { Button } from 'components/button/Button';
 import Sprite from '../../images/icons/symbol-defs.svg';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { login } from 'redux/auth/auth-operations';
 
 const idPassword = nanoid();
 const idEmail = nanoid();
 
 export const LoginForm = () => {
+    const dispatch = useDispatch();
+    
     return (
        <Formik
           initialValues={{ email: '', password: '' }}
-        //   validationSchema={Yup.object({
-        //     name: Yup.string().matches(namePattern, 'Insert first name and second name').required('Required'),
-        //     phone: Yup.string().matches(phonePattern, 'Phone number is not valid').required('Required')
-        //   })
-        //   }
-        //   onSubmit={({ name, phone }, { resetForm }) => {
-        //     const contactNames = contacts.map(contact => contact.name);
-              
-        //     if (contactNames.includes(name)) {
-        //       toast.error(`${name} is already in contacts`);
-        //     } else {
-        //       createContact({ name, phone });
-              
-        //       toast.success('The new contact was added');
-        //       resetForm();
-              
-        //     }
-        //   }
-        //   }
+            validationSchema={Yup.object({
+              email: Yup.string().email('must be a valid email').required('Required'),
+              password: Yup.string().required('Required'),
+            })
+            }
+            onSubmit={({ email, password }, { resetForm }) => {
+              dispatch(login({ email, password }));
+              resetForm();
+            }}
+            
         >
             <StyledForm autoComplete="off" >
                 <Logo />
@@ -43,14 +39,14 @@ export const LoginForm = () => {
                     <StyledField label="Password" name="password" type="text" id={idPassword} placeholder="Password" />
                     <IconWrap><Svg><use href={`${Sprite}#icon-lock`}></use></Svg></IconWrap>
                 </FieldWrap>    
-                <Button type="submit">
+                <Button>
                     {/* <StyledClipLoader loading={isLoading} size={10} /> */}
                     Enter
                 </Button>
-                <Button type="submit">
-                    {/* <StyledClipLoader loading={isLoading} size={10} /> */}
-                    Regidtration
-                </Button>
+                <NavLink to="/register">
+                   Registration
+                    {/* <StyledClipLoader loading={isLoading} size={10} /> */} 
+                </NavLink>
             </StyledForm> 
         </Formik>
     )

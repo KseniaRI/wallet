@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { Field, Form } from "formik";
+import { ErrorMessage, Field, Form } from "formik";
 
 
 
@@ -94,5 +94,16 @@ backdrop-filter: blur(25px);
 border-radius: ${p => p.theme.radii.form};
 `;
 
+export const AmountErrorMessage = styled(ErrorMessage)`
+position: absolute;
+top: 100%;
+color: red;
+`;
+
+export const CategoryErrorMessage = styled(ErrorMessage)`
+position: absolute;
+top: 50%;
+color: red;
+`
 
 

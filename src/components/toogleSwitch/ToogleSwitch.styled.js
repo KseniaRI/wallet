@@ -54,3 +54,26 @@ position: absolute;
 }
 `;
 
+export const Income = styled.span`
+position: absolute;
+left: -66px;
+top: 50%;
+transform: translateY(-50%);
+color:  ${p => p.theme.colors.incomeColor};
+
+ &.disabled{
+  color: ${p => p.theme.colors.disabled};
+ }
+`
+
+export const Expence = styled.span`
+position: absolute;
+left: calc(100% + 20px);
+top: 50%;
+transform: translateY(-50%);
+color: ${p => p.theme.colors.expenseColor};
+
+ &.disabled{
+  color: ${p => p.theme.colors.disabled};
+ }
+`

@@ -1,5 +1,17 @@
 import styled from "@emotion/styled";
 
+export const BalanceView = styled.div`
+border-radius: ${p => p.theme.radii.ellipse};
+border-color: ${p => p.theme.colors.mainTextColor};
+background-color: ${p => p.theme.colors.lightBackgroundColor};
+height: 80px;
+width: 350px;
+padding-top: 8px;
+padding-bottom: 13px;
+padding-left: 40px;
+margin-bottom: 30px;
+`;
+
 export const BalanceTitle = styled.h3`
 margin-bottom: calc(${p => p.theme.space[1]}px * 5);
 font-size: ${p => p.theme.fontSizes.s};

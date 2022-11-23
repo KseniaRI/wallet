@@ -1,5 +1,5 @@
 import { RegistrationForm } from "components/registrationForm/RegistrationForm";
-import { Container, RightBackground } from "pages/CommonPagesStyles.styled";
+import { Container, RightBackground } from "pages/authLayout/AuthLayout.styled";
 import { LeftBackground } from "./RegistrationPage.styled";
 
 

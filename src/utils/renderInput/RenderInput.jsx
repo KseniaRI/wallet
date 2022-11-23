@@ -1,12 +1,14 @@
 
-import Sprite from '../../images/icons/symbol-defs.svg'
+import Sprite from '../../images/icons/symbol-defs.svg';
 import { MobInput, CalendarButton, MobWrapper, StatWrapper, StatInput, StatButton } from "./RenderInput.styled";
+
+
 
 export const renderMobileInput = (props, openCalendar) => {
  
   return (
     <MobWrapper>
-        <MobInput {...props} />
+      <MobInput {...props} />
         <CalendarButton type="button" onClick={openCalendar}>
             <svg width="24" height="24">
                 <use href={`${Sprite}#icon-calendar`}></use>

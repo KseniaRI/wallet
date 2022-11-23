@@ -1,6 +1,22 @@
 import { ThLeft, ThRight, TransactionHeader, Transaction, Td } from "./TransactionTable.styled"
+import { transactions } from '../../utils/transactions'
+import { useDispatch, useSelector } from "react-redux";
+import { getTransactions } from "redux/transactions/transactions-selectors";
+import { useEffect } from "react";
+import { fetchTransactions } from "redux/transactions/transactions-operations";
 
 export const TransactionTable = () => {
+    const transactionsList = useSelector(getTransactions);
+    const dispatch = useDispatch();
+  
+    useEffect(() => {
+      dispatch(fetchTransactions());
+    }, [dispatch]);
+    
+    const addClass = (type) => type ? "income" : "expense";  
+    
+    const chooseArray = () => transactionsList.length > 0 ? transactionsList : transactions;
+    
     return (
         <Transaction>
             <TransactionHeader>
@@ -14,22 +30,15 @@ export const TransactionTable = () => {
                 </tr>
             </TransactionHeader>
             <tbody>
-                <tr>
-                    <Td>1</Td>
-                    <Td>2</Td>
-                    <Td>3</Td>
-                    <Td>4</Td>
-                    <Td>5</Td>
-                    <Td>6</Td>
-                </tr>
-                <tr>
-                    <Td>7</Td>
-                    <Td>8</Td>
-                    <Td>9</Td>
-                    <Td>10</Td>
-                    <Td>11</Td>
-                    <Td>12</Td>
-                </tr>
+                {chooseArray().map(({id,date, type, category, comment, ammount, balance}) =>
+                    <tr key={id}>
+                        <Td>{date}</Td>
+                        <Td>{type === true ? '+' : '-'}</Td>
+                        <Td>{category}</Td>
+                        <Td>{comment}</Td>
+                        <Td className={addClass(type)}>{ammount.toFixed(2)}</Td>
+                        <Td>{balance.toFixed(2)}</Td>
+                    </tr>)}
             </tbody>
         </Transaction>
     )

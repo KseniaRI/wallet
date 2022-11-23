@@ -13,6 +13,7 @@ export const theme = {
     expenseColor: '#FF6596',
     incomeColor: '#24CCA7',
     borderColor: 'rgba(224, 224, 224, 1)',
+    disabled: '#E0E0E0'
   },
   fonts: {
     body: "Circe",
