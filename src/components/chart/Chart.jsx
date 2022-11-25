@@ -26,7 +26,7 @@ export const data = {
 };
 export const Chart = () => {
     return (
-        <Box as="div"  pr={30} position="relative">
+        <Box as="div"  pr={30} position="relative" zIndex={1}>
           <Doughnut data={data} width={320} height={320}/>
           <Expenses>&#8364; {sumExpenses(expenses)}</Expenses>
         </Box>

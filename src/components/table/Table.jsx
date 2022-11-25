@@ -31,21 +31,22 @@ export const Table = () => {
                         <Box as="ul" width={199} >
                             {categories.map(category => <Raw>{category}</Raw>)} 
                         </Box>
-                        <Box as="ul" textAlign="right">
+                        <Box as="ul" textAlign="right" flexGrow={1}>
                             {expenses.map(expense => <Raw>{expense.toFixed(2)}</Raw>)} 
                         </Box>   
                     </StatBody> 
+                    <TFoot>
+                        <Box as="div"  display="flex" alignItems="center" justifyContent="space-between" width={300} m="0 auto">
+                          <span>Expenses:</span>
+                        <span>{sumExpenses(expenses)}</span>
+                        </Box>
+                        <Box as="div" display="flex" alignItems="center" justifyContent="space-between" width={300} m="0 auto">
+                          <span>Incomes:</span>
+                        <span>{sumIncomes(transactions)}</span>
+                        </Box>
+                    </TFoot>
                 </StatTable>
-                <TFoot>
-                    <Box as="div"  display="flex" alignItems="center" justifyContent="space-between" width={300} m="0 auto">
-                      <span>Expenses:</span>
-                    <span>{sumExpenses(expenses)}</span>
-                    </Box>
-                    <Box as="div" display="flex" alignItems="center" justifyContent="space-between" width={300} m="0 auto">
-                      <span>Incomes:</span>
-                    <span>{sumIncomes(transactions)}</span>
-                    </Box>
-                </TFoot>
+                
             </Box>
         
     )

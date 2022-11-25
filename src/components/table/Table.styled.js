@@ -8,7 +8,6 @@ height: 50px;
 
 export const StatTable = styled.div`
 width: 350px;
-margin-bottom: 15px;
 `;
 
 export const StatHeader = styled.div`
@@ -30,6 +29,7 @@ font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.lineHeights.small};
 padding-left: 15px;
 padding-right: 30px;
+margin-bottom: 15px;
 `;
 
 export const Raw = styled.li`
@@ -46,4 +46,6 @@ export const TFoot = styled.div`
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.lineHeights.normal};
 font-weight: ${p => p.theme.fontWeights.bold};
+padding-left: 15px;
+padding-right: 30px;
 `;
