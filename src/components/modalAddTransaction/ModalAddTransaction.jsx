@@ -57,10 +57,10 @@ const ModalAddTransaction = ({ onClose }) => {
                         amount: Yup.number('enter a number').positive().required('Required'),
                     })}  
                     onSubmit={({ date, type, category, comment, amount }, { resetForm }) => {
-                            dispatch(saveTransaction({ date, type, category, comment, amount }));
+                        dispatch(saveTransaction({ date, type, category, comment, amount }));
                             // setIsSubmitted(true);
-                            resetForm({ date: currentDate, type: true, category: 'Salary', comment: '', amount: 0 });   
-                            onClose();
+                        resetForm({ date: currentDate, type: true, category: 'Salary', comment: '', amount: 0 });   
+                        onClose();
                         }}
                 >
                 {({ values, resetForm }) =>

@@ -30,13 +30,13 @@ export const TransactionTable = () => {
                 </tr>
             </TransactionHeader>
             <tbody>
-                {chooseArray().map(({id,date, type, category, comment, ammount, balance}) =>
+                {chooseArray().map(({id,date, type, category, comment, amount, balance}) =>
                     <tr key={id}>
                         <Td>{date}</Td>
                         <Td>{type === true ? '+' : '-'}</Td>
                         <Td>{category}</Td>
                         <Td>{comment}</Td>
-                        <Td className={addClass(type)}>{ammount.toFixed(2)}</Td>
+                        <Td className={addClass(type)}>{amount.toFixed(2)}</Td>
                         <Td>{balance.toFixed(2)}</Td>
                     </tr>)}
             </tbody>
