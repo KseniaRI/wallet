@@ -1,21 +1,24 @@
 import { Box } from "components/Box";
-import Datetime from 'react-datetime';
+// import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
-import { renderStatInput } from "utils/renderInput/RenderInput";
+// import { renderStatInput } from "utils/renderInput/RenderInput";
 import { Raw, StatBody, StatHeader, StatTable, TFoot } from "./Table.styled";
-import {transactions} from '../../utils/transactions'
+// import {transactions} from '../../utils/transactions'
 import { calcDataDoughnut, sumExpenses, sumIncomes } from "utils/statistics/calculateData";
 import { doughnutColors } from '../../utils/statistics/doughnutColors'
+import { useSelector } from "react-redux";
+import { getTransactions } from "redux/transactions/transactions-selectors";
 
 export const Table = () => {
-    const { categories, expenses } = calcDataDoughnut(transactions);
+    const transactionsList = useSelector(getTransactions);
+    const { categories, expenses } = calcDataDoughnut(transactionsList);
     
     return (
             <Box as="div" position="absolute" zIndex={1} right={85}>  
-                <Box as="div" display="flex" width={351} justifyContent="space-between" mb={20}>
+                {/* <Box as="div" display="flex" width={351} justifyContent="space-between" mb={20}>
                     <Datetime dateFormat="MM" renderInput={renderStatInput} timeFormat={false} initialValue="Month"/>
                     <Datetime dateFormat="YYYY" renderInput={renderStatInput} timeFormat={false} initialValue="Year"/>
-                </Box>
+                </Box> */}
                 <StatTable>
                     <StatHeader>
                             <div>Category</div>
@@ -42,7 +45,7 @@ export const Table = () => {
                         </Box>
                         <Box as="div" display="flex" alignItems="center" justifyContent="space-between" width={300} m="0 auto">
                           <span>Incomes:</span>
-                        <span>{sumIncomes(transactions)}</span>
+                        <span>{sumIncomes(transactionsList)}</span>
                         </Box>
                     </TFoot>
                 </StatTable>

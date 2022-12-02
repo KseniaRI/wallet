@@ -15,7 +15,7 @@ export const transactionsSlice = createSlice({
              state.isLoading = true;
         },
         [fetchTransactions.fulfilled]: (state, action) => {
-            state.contacts = action.payload;
+            state.transactions = action.payload.result;
             state.isLoading = false;
         },
         [fetchTransactions.rejected]: (state, action) => {
@@ -26,7 +26,7 @@ export const transactionsSlice = createSlice({
             state.isLoading = true;
         },
         [saveTransaction.fulfilled]: (state, action) => {
-            state.transactions.push(action.payload);
+            state.transactions.unshift(action.payload.result);
             state.isLoading = false;
         }, 
         [saveTransaction.rejected]: (state, action) => {

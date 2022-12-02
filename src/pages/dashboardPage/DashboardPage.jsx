@@ -4,6 +4,7 @@ import { Header } from "components/header/Header"
 import { SideBar } from "components/sideBar/SideBar"
 import { Container } from "./DashboardPage.styled"
 import { Box } from "components/Box"
+import { ToastContainer } from "react-toastify"
 
 const DashboardPage = () => {
     return (
@@ -25,6 +26,7 @@ const DashboardPage = () => {
                     </Container>
                 </Box>    
             </main>
+            {/* <ToastContainer autoClose={2000} /> */}
         </> 
     )
 }

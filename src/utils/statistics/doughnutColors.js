@@ -6,4 +6,5 @@ export const doughnutColors = [
         '#6E78E8',
         '#4A56E2',
         '#81E1FF',
+        '#24CCA7'
       ]

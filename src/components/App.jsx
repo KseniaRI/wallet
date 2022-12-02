@@ -1,8 +1,11 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
+// import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute';
 
 const DashboardPage = lazy(() => import('../pages/dashboardPage/DashboardPage'));
 const HomeTab = lazy(() => import('./homeTab/HomeTab'));
@@ -21,22 +24,18 @@ export const App = () => {
 
 
   return (
-    <Routes>
-      <Route path='/' element={<AuthLayout />}>
-        <Route index element={<LoginPage />}/>
-        <Route path='register' element={<RegistrationPage />} />
-      </Route>
-      <Route path='/dashboard' element={<DashboardPage />}>
-            <Route path='home' element={<HomeTab />} />
-            <Route path='diagram' element={<DiagramTab />} />
-      </Route>
-          {/* <Route path='/' element={<DashboardPage />}>
-              <Route index element={<HomeTab />} />
+    <Suspense fallback={<h1>Loading...</h1>}>
+      <Routes>
+        <Route path='/' element={<AuthLayout />}>
+          <Route index element={<PublicRoute restricted component={<LoginPage />}/>} />
+          <Route path='register' element={<PublicRoute restricted component={<RegistrationPage />}/>}  />
+        </Route>
+        <Route path='/dashboard' element={<PrivateRoute component={<DashboardPage />} />}>
+              <Route path='home' element={<HomeTab />} />
               <Route path='diagram' element={<DiagramTab />} />
-              <Route path='login' element={<LoginPage />} />
-              <Route path='register' element={<RegistrationPage />} />
-          </Route> */}
-      <Route path="*" element={<LoginPage />} />
-    </Routes>
+        </Route>
+        {/* <Route path="*" element={<LoginPage />} /> */}
+      </Routes>
+    </Suspense> 
   );
 };

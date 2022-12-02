@@ -57,13 +57,22 @@ const ModalAddTransaction = ({ onClose }) => {
                         amount: Yup.number('enter a number').positive().required('Required'),
                     })}  
                     onSubmit={({ date, type, category, comment, amount }, { resetForm }) => {
-                        dispatch(saveTransaction({ date, type, category, comment, amount }));
+                        if (!type && category !== "Salary") {
+                            dispatch(saveTransaction({ date, type, category, comment, amount }));
+                        }
+                        if (!type && category === "Salary") {
+                            return;
+                        }
+                        if (type && category === "Salary") {
+                            dispatch(saveTransaction({ date, type, category, comment, amount }));
+                        }
+                        
                             // setIsSubmitted(true);
                         resetForm({ date: currentDate, type: true, category: 'Salary', comment: '', amount: 0 });   
                         onClose();
                         }}
                 >
-                {({ values, resetForm }) =>
+                {({ values, resetForm}) =>
                     (<StyledForm>
                         <ButtonClose type="button" onClick={onClose}><TfiClose/></ButtonClose>
                         <ModalTitle>Add transaction</ModalTitle>
@@ -72,21 +81,22 @@ const ModalAddTransaction = ({ onClose }) => {
                             <Box as="div" position="relative" width="100%">
                                 <CategoryErrorMessage name="category" component="div" />
                                 <CategoryField defaultValue="choose" label="Category" as="select" name="category" id={idCategory}>
-                                    <Option value="choose" >Choose category</Option>
-                                    <Option value="main">Main</Option>
-                                    <Option value="food">Food</Option>
-                                    <Option value="car">Car</Option>
-                                    <Option value="leisure">Leisure</Option>
-                                    <Option value="children">Children</Option>
-                                    <Option value="home">Home</Option>
-                                    <Option value="education">Education</Option>
-                                    <Option value="the rest">The rest</Option>
+                                    <Option value="Choose" >Choose category</Option>
+                                    <Option value="Main">Main</Option>
+                                    <Option value="Food">Food</Option>
+                                    <Option value="Car">Car</Option>
+                                    <Option value="Leisure">Leisure</Option>
+                                    <Option value="Children">Children</Option>
+                                    <Option value="Home">Home</Option>
+                                    <Option value="Education">Education</Option>
+                                    <Option value="The rest">The rest</Option>
                                 </CategoryField>
                             </Box>
                         }
+                        {/* {values.type && <Field value="Salary" name="category" id={idCategory}/>} */}
                         <Box as="div" display="flex" width="100%" justifyContent="space-between" alignItems="flex-end" mb={40}>
                             <Box as="div" position="relative" width="100%">
-                                <ShortField label="Amount" type="text" name="amount" id={idAmount} placeholder="0.00" />
+                                <ShortField label="Amount" type="number" name="amount" id={idAmount} placeholder="0.00" />
                                 <AmountErrorMessage name="amount" component="div" />
                             </Box>
                             <Field name='date' timeFormat={false} component={FormikDateTime}/>            

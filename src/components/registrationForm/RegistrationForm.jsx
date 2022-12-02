@@ -6,7 +6,8 @@ import { FieldWrap, IconWrap, StyledField, StyledForm, Svg } from './Registratio
 import { Button } from 'components/button/Button';
 import Sprite from '../../images/icons/symbol-defs.svg';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/auth-operations';
+import { signup } from 'redux/auth/auth-operations';
+import { NavLink } from 'react-router-dom';
 
 const idName = nanoid();
 const idPassword = nanoid();
@@ -25,7 +26,7 @@ export const RegistrationForm = () => {
             })
             }
             onSubmit={({ name, email, password }, { resetForm }) => {
-              dispatch(register({ name, email, password }));
+              dispatch(signup({ name, email, password }));
               resetForm();
             }}
         >
@@ -49,12 +50,12 @@ export const RegistrationForm = () => {
                 </FieldWrap>   
                 <Button type="submit">
                     {/* <StyledClipLoader loading={isLoading} size={10} /> */}
-                    Regidtration
+                    Registration
                 </Button>
-                <Button type="submit">
+                <NavLink to="/" >
                     {/* <StyledClipLoader loading={isLoading} size={10} /> */}
                     Enter
-                </Button>
+                </NavLink>
             </StyledForm> 
         </Formik>
     )

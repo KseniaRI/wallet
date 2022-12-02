@@ -2,8 +2,13 @@ import { Box } from "components/Box";
 import { ButtonLogout, Container, StyledHeader, Svg } from "./header.styled";
 import Sprite from '../../images/icons/symbol-defs.svg';
 import { Logo } from "components/logo/Logo";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserName } from "redux/auth/auth-selectors";
+import { logout } from "redux/auth/auth-operations";
 
 export const Header = () => {
+    const user = useSelector(getUserName);
+    const dispatch = useDispatch();
     return (
         <StyledHeader>
             <Container>
@@ -14,9 +19,9 @@ export const Header = () => {
                     color="secondaryTxtColor"
                     fontSize="m"
                     lineHeight="normal">
-                    <span>Name</span>
+                    <span>{user}</span>
                     <Box as="div" width="1px" height="30px" mr={15} ml={15} backgroundColor="secondaryTxtColor"/>
-                    <ButtonLogout type="button">
+                    <ButtonLogout type="button" onClick={() => dispatch(logout())}>
                     <Svg>
                         <use href={`${Sprite}#icon-logout`}></use>
                     </Svg>

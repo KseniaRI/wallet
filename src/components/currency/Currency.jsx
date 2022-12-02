@@ -12,7 +12,7 @@ export const Currency = () => {
     useEffect(() => {
         const getLatestRates = async () => {
             try {
-                await fetchLatestRates().then(({ rates, date }) => {
+                await fetchLatestRates().then(({ rates }) => {
                     setLatestRates(Object.entries(rates));
                     // setRequestDate(date);
                 })
