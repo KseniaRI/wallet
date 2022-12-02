@@ -11,21 +11,6 @@ import { getTransactions } from "redux/transactions/transactions-selectors";
 
 ChartJS.register(ArcElement, Tooltip);
 
-
-
-
-// export const data = {
-//   labels: categories,
-//   datasets: [
-//     {
-//       label: 'EUR',
-//       data: expenses,
-//       backgroundColor: doughnutColors,
-//       borderColor: doughnutColors,
-//       borderWidth: 1,
-//     },
-//   ],
-// };
 export const Chart = () => {
   const transactionsList = useSelector(getTransactions);
   const { categories, expenses } = calcDataDoughnut(transactionsList);

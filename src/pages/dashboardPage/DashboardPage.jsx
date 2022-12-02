@@ -1,12 +1,20 @@
-import { Suspense } from "react"
+import { Suspense, useEffect } from "react"
 import { Outlet } from "react-router-dom"
 import { Header } from "components/header/Header"
 import { SideBar } from "components/sideBar/SideBar"
 import { Container } from "./DashboardPage.styled"
 import { Box } from "components/Box"
+import { useDispatch } from "react-redux"
+import { fetchCurrentUser } from "redux/auth/auth-operations"
 // import { ToastContainer } from "react-toastify"
 
 const DashboardPage = () => {
+    const dispatch = useDispatch();
+    
+     useEffect(() => {
+        dispatch(fetchCurrentUser());
+     }, [dispatch]);
+    
     return (
         <>
             <Header />
