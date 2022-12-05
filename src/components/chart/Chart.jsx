@@ -2,7 +2,6 @@ import { Box } from "components/Box";
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip} from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-// import { transactions } from '../../utils/transactions';
 import { calcDataDoughnut, sumExpenses } from "utils/statistics/calculateData";
 import { Expenses } from "./Chart.styled";
 import { doughnutColors } from '../../utils/statistics/doughnutColors';

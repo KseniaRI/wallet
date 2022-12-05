@@ -1,4 +1,5 @@
 import { Box } from "components/Box"
+import { Loader } from "components/loader/Loader"
 import { Suspense } from "react"
 import { Outlet } from "react-router-dom"
 
@@ -8,7 +9,7 @@ export const Container = () => {
             pl={85}
             pr={85}
             backgroundColor="backgroundColor">
-            <Suspense fallback={<h1>Loading...</h1>}>
+            <Suspense fallback={<Loader/>}>
                 <Outlet/>
             </Suspense>
         </Box>

@@ -12,7 +12,6 @@ padding: 40px 65px 60px 65.5px;
 transform: translate(-50%, -50%);
 z-index: 1;
 width: 540px;
-/* height: 616px; */
 background-color: ${p => p.theme.colors.lightBackgroundColor};
 border-radius: ${p => p.theme.radii.form};
 `;
@@ -36,8 +35,6 @@ width: 24px;
 height: 24px;
 left: 8px;
 bottom: 10px;
-/* top: 50%;
-transform: translateY(-50%) */
 `;
 
 export const StyledField = styled(Field)`

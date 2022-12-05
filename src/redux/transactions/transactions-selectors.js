@@ -1,5 +1,5 @@
 export const getTransactions = state => state.transactions.items.transactions;
-// export const getIsLoading = state => state.phonebook.items.isLoading;
+export const getIsLoading = state => state.transactions.items.isLoading;
 // export const getFilter = state => state.phonebook.filter.value;
 
 // export const getVisibleContacts = state => {

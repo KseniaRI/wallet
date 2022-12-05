@@ -5,9 +5,10 @@ import { Logo } from 'components/logo/Logo';
 import { FieldWrap, IconWrap, StyledField, StyledForm, Svg } from './RegistrationForm.styled';
 import { Button } from 'components/button/Button';
 import Sprite from '../../images/icons/symbol-defs.svg';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { signup } from 'redux/auth/auth-operations';
-import { NavLink } from 'react-router-dom';
+import { StyledNavButton } from 'components/button/Button.styled';
+import { Loader } from 'components/loader/Loader';
 
 const idName = nanoid();
 const idPassword = nanoid();
@@ -16,6 +17,7 @@ const idConfirmPassword = nanoid();
 
 export const RegistrationForm = () => {
     const dispatch = useDispatch();
+    
     return (
        <Formik
           initialValues={{ email: '', password: '', name: '' }}
@@ -49,13 +51,12 @@ export const RegistrationForm = () => {
                     <IconWrap><Svg><use href={`${Sprite}#icon-user`}></use></Svg></IconWrap>
                 </FieldWrap>   
                 <Button type="submit">
-                    {/* <StyledClipLoader loading={isLoading} size={10} /> */}
                     Registration
                 </Button>
-                <NavLink to="/" >
-                    {/* <StyledClipLoader loading={isLoading} size={10} /> */}
+                <StyledNavButton to="/" >
                     Enter
-                </NavLink>
+                </StyledNavButton>
+                <Loader />
             </StyledForm> 
         </Formik>
     )

@@ -1,5 +1,4 @@
 import { ThLeft, ThRight, TransactionHeader, Transaction, Td } from "./TransactionTable.styled"
-// import { transactions } from '../../utils/transactions'
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { getTransactions } from "redux/transactions/transactions-selectors";
@@ -17,8 +16,6 @@ export const TransactionTable = () => {
 
 
     const addClass = (type) => type ? "income" : "expense";  
-    
-    // const chooseArray = () => transactionsList.length > 0 ? transactionsList : transactions;
     
     return (
         <Transaction>

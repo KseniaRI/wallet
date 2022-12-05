@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
-// import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
+import { Loader } from './loader/Loader';
 
 const DashboardPage = lazy(() => import('../pages/dashboardPage/DashboardPage'));
 const HomeTab = lazy(() => import('./homeTab/HomeTab'));
@@ -24,17 +24,17 @@ export const App = () => {
 
 
   return (
-    <Suspense fallback={<h1>Loading...</h1>}>
+    <Suspense fallback={<Loader/>}>
       <Routes>
         <Route path='/' element={<AuthLayout />}>
           <Route index element={<PublicRoute restricted component={<LoginPage />}/>} />
           <Route path='register' element={<PublicRoute restricted component={<RegistrationPage />}/>}  />
         </Route>
         <Route path='/dashboard' element={<PrivateRoute component={<DashboardPage />} />}>
-              <Route path='home' element={<HomeTab />} />
-              <Route path='diagram' element={<DiagramTab />} />
+          <Route path='home' element={<HomeTab />} />
+          <Route path='diagram' element={<DiagramTab />} />
         </Route>
-        {/* <Route path="*" element={<LoginPage />} /> */}
+        <Route path="*" element={<LoginPage/>} />
       </Routes>
     </Suspense> 
   );

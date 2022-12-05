@@ -32,18 +32,7 @@ export const transactionsSlice = createSlice({
         [saveTransaction.rejected]: (state, action) => {
             state.isLoading = false;
             state.error = action.payload;
-        },
-        // [deleteContact.pending]: (state) => {
-        //      state.isLoading = true;
-        // },
-        // [deleteContact.fulfilled]: (state, action) => {
-        //     state.contacts = state.contacts.filter(item => item.id !== action.payload);
-        //     state.isLoading = false;
-        // },
-        // [deleteContact.rejected]: (state, action) => {
-        //     state.isLoading = false;
-        //     state.error = action.payload;
-        // },
+        }
     }
 })
 

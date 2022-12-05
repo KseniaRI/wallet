@@ -5,10 +5,12 @@ import { Logo } from "components/logo/Logo";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserName } from "redux/auth/auth-selectors";
 import { logout } from "redux/auth/auth-operations";
+import { Loader } from "components/loader/Loader";
 
 export const Header = () => {
     const user = useSelector(getUserName);
     const dispatch = useDispatch();
+
     return (
         <StyledHeader>
             <Container>
@@ -24,8 +26,9 @@ export const Header = () => {
                     <ButtonLogout type="button" onClick={() => dispatch(logout())}>
                     <Svg>
                         <use href={`${Sprite}#icon-logout`}></use>
-                    </Svg>
+                        </Svg>
                         Logout
+                        <Loader />
                     </ButtonLogout>
                 </Box>
             </Container>

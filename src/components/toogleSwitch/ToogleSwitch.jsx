@@ -8,12 +8,6 @@ export const ToogleSwitch = ({ field, form}) => {
     
     const [isChecked, setIsChecked] = useState(false);
 
-    // useEffect(() => {
-    //    if (formIsSubmitted) {
-    //     setIsChecked(false);
-    // }   
-    // },[formIsSubmitted] )
-
     const addClass = (checked) => {
         if (!checked) {
             return "disabled";

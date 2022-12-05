@@ -5,7 +5,7 @@ export const NavItem = styled.li`
     font-size: ${p => p.theme.fontSizes.m};
     line-height: ${p => p.theme.lineHeights.normal};
     color: ${p => p.theme.colors.mainTxtColor};
-    margin-bottom: calc(${p => p.theme.space[1]}px * 5);
+    margin-bottom: 10px;
     transition:  font-weight 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 
     &:hover,

@@ -5,9 +5,10 @@ import { Logo } from 'components/logo/Logo';
 import { FieldWrap, IconWrap, StyledField, StyledForm, Svg } from '../registrationForm/RegistrationForm.styled';
 import { Button } from 'components/button/Button';
 import Sprite from '../../images/icons/symbol-defs.svg';
-import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from 'redux/auth/auth-operations';
+import { StyledNavButton } from 'components/button/Button.styled';
+import { Loader } from 'components/loader/Loader';
 
 const idPassword = nanoid();
 const idEmail = nanoid();
@@ -27,7 +28,6 @@ export const LoginForm = () => {
               dispatch(login({ email, password }));
               resetForm();
             }}
-            
         >
             <StyledForm autoComplete="off" >
                 <Logo />
@@ -40,13 +40,12 @@ export const LoginForm = () => {
                     <IconWrap><Svg><use href={`${Sprite}#icon-lock`}></use></Svg></IconWrap>
                 </FieldWrap>    
                 <Button>
-                    {/* <StyledClipLoader loading={isLoading} size={10} /> */}
                     Enter
                 </Button>
-                <NavLink to="/register">
-                   Registration
-                    {/* <StyledClipLoader loading={isLoading} size={10} /> */} 
-                </NavLink>
+                <StyledNavButton to="/register">
+                    Registration
+                </StyledNavButton>
+                <Loader />
             </StyledForm> 
         </Formik>
     )

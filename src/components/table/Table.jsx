@@ -3,7 +3,6 @@ import { Box } from "components/Box";
 import "react-datetime/css/react-datetime.css";
 // import { renderStatInput } from "utils/renderInput/RenderInput";
 import { Raw, StatBody, StatHeader, StatTable, TFoot } from "./Table.styled";
-// import {transactions} from '../../utils/transactions'
 import { calcDataDoughnut, sumExpenses, sumIncomes } from "utils/statistics/calculateData";
 import { doughnutColors } from '../../utils/statistics/doughnutColors'
 import { useSelector } from "react-redux";
@@ -12,7 +11,9 @@ import { getTransactions } from "redux/transactions/transactions-selectors";
 export const Table = () => {
     const transactionsList = useSelector(getTransactions);
     const { categories, expenses } = calcDataDoughnut(transactionsList);
-    
+    const numOfRaws = categories.length;
+    const colorsOfCategories = doughnutColors.slice(0, numOfRaws);
+
     return (
             <Box as="div" position="absolute" zIndex={1} right={85}>  
                 {/* <Box as="div" display="flex" width={351} justifyContent="space-between" mb={20}>
@@ -26,7 +27,7 @@ export const Table = () => {
                     </StatHeader>
                     <StatBody>
                         <Box as="ul" width={40}>
-                            {doughnutColors.map(color => 
+                            {colorsOfCategories.map(color => 
                                 <Raw>
                                     <Box as="div" display="block" width={24} height={24} borderRadius="icon" backgroundColor={color}  mr={16} fontSize="s" lineHeight="small"/>
                                 </Raw>)}

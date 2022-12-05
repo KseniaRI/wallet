@@ -26,8 +26,7 @@ const currentDate = moment().format("DD.MM.YYYY");
 const ModalAddTransaction = ({ onClose }) => {
 
     const dispatch = useDispatch();
-    // const [isSubmitted, setIsSubmitted] = useState(false);
-
+    
     useEffect(() => {
         const handleKeyDown = (evt) => {
             if (evt.code === 'Escape') {
@@ -67,7 +66,6 @@ const ModalAddTransaction = ({ onClose }) => {
                             dispatch(saveTransaction({ date, type, category, comment, amount }));
                         }
                         
-                            // setIsSubmitted(true);
                         resetForm({ date: currentDate, type: true, category: 'Salary', comment: '', amount: 0 });   
                         onClose();
                         }}
@@ -93,7 +91,6 @@ const ModalAddTransaction = ({ onClose }) => {
                                 </CategoryField>
                             </Box>
                         }
-                        {/* {values.type && <Field value="Salary" name="category" id={idCategory}/>} */}
                         <Box as="div" display="flex" width="100%" justifyContent="space-between" alignItems="flex-end" mb={40}>
                             <Box as="div" position="relative" width="100%">
                                 <ShortField label="Amount" type="number" name="amount" id={idAmount} placeholder="0.00" />
@@ -104,11 +101,9 @@ const ModalAddTransaction = ({ onClose }) => {
                         <CommentField label="Comment" type="text" name="comment" id={idComment} placeholder="Comment" />
 
                         <Button type="submit">
-                            {/* <StyledClipLoader loading={isLoading} size={10} /> */}
                             Add
                         </Button>
                         <Button type="button" onClick={resetForm}>
-                            {/* <StyledClipLoader loading={isLoading} size={10} /> */}
                             Cancel
                         </Button>
                     </StyledForm>

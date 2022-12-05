@@ -19,7 +19,6 @@ export const theme = {
     body: "Circe",
     title: "Poppins"
   },
-  space: [0, 2, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: {
     xs: '12px',
     s: '16px',

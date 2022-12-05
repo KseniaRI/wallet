@@ -1,7 +1,4 @@
 import { StyledButton } from "./Button.styled"
 
-export const Button = ({children}) => {
-    return (
-        <StyledButton type="submit">{children}</StyledButton>
-    )
-}
+export const Button = ({ children }) => <StyledButton type="submit">{children}</StyledButton>;
+    

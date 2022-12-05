@@ -12,11 +12,13 @@ const Home = () => {
     };
     
     return (
-        <HomeWrap>
-            <TransactionTable/>
+        <>
+            <HomeWrap>
+                <TransactionTable/>
+                {isModalOpen && (<ModalAddTransaction onClose={toggleModal} />)}   
+            </HomeWrap>
             <ButtonAddTransactions onClick={toggleModal} />
-        {isModalOpen && (<ModalAddTransaction onClose={toggleModal} />)}   
-        </HomeWrap>
+        </>
     )
 }
 

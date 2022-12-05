@@ -25,7 +25,6 @@ overflow: hidden;
     height: 547px;
     filter: blur(15px);
     opacity: 0.6;
-  
 }
 
 &::after {

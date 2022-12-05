@@ -6,7 +6,6 @@ import { nanoid } from 'nanoid';
 
 const DATE_FORMAT = 'DD.MM.YYYY';
 const idDate = nanoid();
-// const currentDate = moment().format("DD.MM.YYYY");
 
 const FormikDateTime = ({ field, form, timeFormat }) => {
 

@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
-
 import { ErrorMessage, Field, Form } from "formik";
-
-
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -15,8 +12,6 @@ export const Backdrop = styled.div`
   opacity: 1;
   z-index: 998;
 `;
-
-
 
 export const ButtonClose = styled.button`
 position: absolute;
