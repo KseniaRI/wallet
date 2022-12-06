@@ -57,3 +57,14 @@ width: 24px;
 height: 24px;
 margin-right: 20px;
 `;
+
+export const EyeButton = styled.button`
+position: absolute;
+right: 0;
+top: 50%;
+transform: translateY(-50%);
+background-color: #fff;
+outline: none;
+border: ${p => p.theme.borders.none};
+width: 30px;
+`;
