@@ -40,7 +40,7 @@ export const LoginForm = () => {
                     <IconWrap><Svg><use href={`${Sprite}#icon-lock`}></use></Svg></IconWrap>
                 </FieldWrap>    
                 <Button>
-                    Enter
+                    Log in
                 </Button>
                 <StyledNavButton to="/register">
                     Registration

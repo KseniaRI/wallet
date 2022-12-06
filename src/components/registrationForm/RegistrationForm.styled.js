@@ -21,6 +21,9 @@ position: relative;
 width: 100%;
 margin-bottom: 40px;
 
+&:nth-of-type(3){
+    margin-bottom: 10px;
+}
 &:last-of-type{
     margin-bottom: 50px;
 }

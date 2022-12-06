@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <>
             <HomeWrap>
-                <TransactionTable/>
+                    <TransactionTable />
                 {isModalOpen && (<ModalAddTransaction onClose={toggleModal} />)}   
             </HomeWrap>
             <ButtonAddTransactions onClick={toggleModal} />

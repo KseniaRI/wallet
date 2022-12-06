@@ -32,10 +32,13 @@ width: 700px;
 `;
 
 export const TransactionHeader = styled.thead`
+
 background-color: ${p => p.theme.colors.lightBackgroundColor};
 font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.lineHeights.normal};
 height: 58px;
+width: 700px;
+
 
     th{
        text-align: left;  
@@ -67,5 +70,4 @@ border-bottom: 1px solid #DCDCDF;
 box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
 padding-left: 20px;
 padding-right: 20px;
-
 `;
