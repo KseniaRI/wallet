@@ -15,12 +15,22 @@ export const Backdrop = styled.div`
 
 export const ButtonClose = styled.button`
 position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
 top: 20px;
 right: 20px;
-width: 16px;
-height: 16px;
+width: 30px;
+height: 30px;
 background-color: transparent;
 border: ${p => p.theme.borders.none};
+border-radius: ${p => p.theme.radii.round};
+
+&:hover,
+&:focus{
+   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+  0px 2px 1px 0px rgba(0, 0, 0, 0.2);
+}
 `
 
 export const Modal = styled.div`
