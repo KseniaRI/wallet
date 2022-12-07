@@ -3,7 +3,7 @@ import { useEffect} from "react";
 import { createPortal } from "react-dom";
 import "react-datetime/css/react-datetime.css";
 import 'moment/locale/it';
-import { Modal, Backdrop} from "../modalAddTransaction/Modals.styled";
+import { Backdrop, Logout} from "../modalAddTransaction/Modals.styled";
 import { useDispatch } from "react-redux";
 import { Box } from "components/Box";
 import { ButtonClose, ModalTitle } from "components/modalAddTransaction/Modals.styled";
@@ -35,18 +35,21 @@ const LogoutModal = ({ onClose }) => {
     
     return createPortal(
         <Backdrop onClick={handleBackdropClick}>
-            <Modal>
-                <ButtonClose type="button" onClick={onClose}><TfiClose/></ButtonClose>
-                <ModalTitle>Are you sure you want to exit?</ModalTitle>
-                <Box as="div" display="flex">
-                    <Button type="button" onClick={()=>{dispatch(logout())}}>
+            <Logout>
+                <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
+                    <ButtonClose type="button" onClick={onClose}><TfiClose/></ButtonClose>
+                    <ModalTitle>Are you sure you want to exit?</ModalTitle>
+                    <Button type="button" onClick={() => {
+                        onClose();
+                        dispatch(logout());
+                    }}>
                         Exit
                     </Button>
                     <Button type="button" onClick={onClose}>
                         Cancel
                     </Button>
-                </Box>    
-            </Modal>        
+                </Box> 
+            </Logout>        
         </Backdrop>,
         modalLogoutRoot)
 }

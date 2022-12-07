@@ -47,6 +47,21 @@ border-radius: ${p => p.theme.radii.form};
 background-color: ${p => p.theme.colors.lightBackgroundColor};
 `;
 
+export const Logout = styled.div`
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 440px;
+height: 440px;
+padding-top: 80px;
+padding-right: 63px;
+padding-left: 67px;
+border: ${p => p.theme.borders.none};
+border-radius: ${p => p.theme.radii.form};
+background-color: ${p => p.theme.colors.lightBackgroundColor};
+`;
+
 export const StyledForm = styled(Form)`
 display: flex;
 flex-direction: column;
@@ -59,6 +74,7 @@ line-height: ${p => p.theme.lineHeights.normal};
 font-family: ${p => p.theme.fonts.title};
 font-weight: ${p => p.theme.fontWeights.normal};
 margin-bottom: 40px;
+text-align:center;
 `;
 
 const StyledField = styled(Field)`

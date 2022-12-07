@@ -1,4 +1,4 @@
 import { StyledButton } from "./Button.styled"
 
-export const Button = ({ children }) => <StyledButton type="submit">{children}</StyledButton>;
+export const Button = ({ children, onClick = null }) => <StyledButton onClick={onClick}>{children}</StyledButton>;
     
