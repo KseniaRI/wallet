@@ -10,7 +10,7 @@ import "react-datetime/css/react-datetime.css";
 import moment from 'moment';
 import 'moment/locale/it';
 import * as Yup from 'yup';
-import { AmountErrorMessage, Backdrop, ButtonClose, CategoryErrorMessage, CategoryField, CommentField, Modal, ModalTitle, Option, ShortField, StyledForm} from "./ModalAddTransaction.styled";
+import { AmountErrorMessage, Backdrop, ButtonClose, CategoryErrorMessage, CategoryField, CommentField, Modal, ModalTitle, Option, ShortField, StyledForm} from "./Modals.styled";
 import { useDispatch } from "react-redux";
 import { saveTransaction } from "redux/transactions/transactions-operations";
 import FormikDateTime from "./FormikDatetime";

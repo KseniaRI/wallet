@@ -32,7 +32,6 @@ border-radius: ${p => p.theme.radii.round};
   0px 2px 1px 0px rgba(0, 0, 0, 0.2);
 }
 `
-
 export const Modal = styled.div`
 position: absolute;
 top: 50%;

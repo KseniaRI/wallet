@@ -2,14 +2,18 @@ import { Box } from "components/Box";
 import { ButtonLogout, Container, StyledHeader, Svg } from "./header.styled";
 import Sprite from '../../images/icons/symbol-defs.svg';
 import { Logo } from "components/logo/Logo";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getUserName } from "redux/auth/auth-selectors";
-import { logout } from "redux/auth/auth-operations";
 import { Loader } from "components/loader/Loader";
+import LogoutModal from "components/logoutModal/LogoutModal";
+import { useState } from "react";
 
 export const Header = () => {
     const user = useSelector(getUserName);
-    const dispatch = useDispatch();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const toggleModal = () => {
+        setIsModalOpen(state => !state);
+    };
 
     return (
         <StyledHeader>
@@ -23,7 +27,7 @@ export const Header = () => {
                     lineHeight="normal">
                     <span>{user}</span>
                     <Box as="div" width="1px" height="30px" mr={15} ml={15} backgroundColor="secondaryTxtColor"/>
-                    <ButtonLogout type="button" onClick={() => dispatch(logout())}>
+                    <ButtonLogout type="button" onClick={toggleModal}>
                     <Svg>
                         <use href={`${Sprite}#icon-logout`}></use>
                         </Svg>
@@ -32,6 +36,7 @@ export const Header = () => {
                     </ButtonLogout>
                 </Box>
             </Container>
+            {isModalOpen && (<LogoutModal onClose={toggleModal} />)}
         </StyledHeader>
     )
 }
