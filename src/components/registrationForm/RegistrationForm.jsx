@@ -1,8 +1,8 @@
-import { Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
 import { Logo } from 'components/logo/Logo';
-import { EyeButton, FieldWrap, IconWrap, StyledField, StyledForm, Svg } from './RegistrationForm.styled';
+import { EyeButton, FieldWrap, IconWrap, StyledErrorMessage, StyledField, StyledForm, Svg } from './AuthForms.styled';
 import { Button } from 'components/button/Button';
 import Sprite from '../../images/icons/symbol-defs.svg';
 import { useDispatch} from 'react-redux';
@@ -45,6 +45,9 @@ export const RegistrationForm = () => {
                     <FieldWrap>
                         <StyledField label="Email" name="email" type="email" id={idEmail} placeholder="E-mail" />
                         <IconWrap><Svg><use href={`${Sprite}#icon-email`}></use></Svg></IconWrap>
+                        <StyledErrorMessage>
+                            <ErrorMessage name="email"/>
+                        </StyledErrorMessage>
                     </FieldWrap>
                     <FieldWrap>
                         <StyledField label="Password" name="password" type={showPassword ? 'text' : 'password'} id={idPassword} placeholder="Password" />
@@ -52,6 +55,9 @@ export const RegistrationForm = () => {
                         <EyeButton type="button" onClick={() => setShowPassword(!showPassword)}>
                             {!showPassword ? <AiOutlineEyeInvisible color='#BDBDBD'/>:<AiOutlineEye color='#BDBDBD'/>}
                         </EyeButton>
+                        <StyledErrorMessage >
+                           <ErrorMessage name="password"/>
+                        </StyledErrorMessage>
                     </FieldWrap>
                     <FieldWrap>
                         <StyledField label="Confirm-password" name="confirm" type={showConfirm ? 'text' : 'password'} id={idConfirmPassword} placeholder="Confirm password" />
@@ -66,6 +72,9 @@ export const RegistrationForm = () => {
                     <FieldWrap>
                         <StyledField label="Name" name="name" type="text" id={idName} placeholder="Your name" />
                         <IconWrap><Svg><use href={`${Sprite}#icon-user`}></use></Svg></IconWrap>
+                        <StyledErrorMessage >
+                            <ErrorMessage name="name"/>
+                        </StyledErrorMessage>
                     </FieldWrap>
                     <Button type="submit">
                         Registration

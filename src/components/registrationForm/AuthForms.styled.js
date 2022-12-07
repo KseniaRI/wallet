@@ -63,8 +63,17 @@ position: absolute;
 right: 0;
 top: 50%;
 transform: translateY(-50%);
-background-color: #fff;
+background-color: transparent;
 outline: none;
 border: ${p => p.theme.borders.none};
 width: 30px;
 `;
+
+export const StyledErrorMessage = styled.div`
+position: absolute;
+bottom: -25px;
+left: 50%;
+transform: translateX(-50%);
+color: ${p => p.theme.colors.expenseColor};
+`;
+

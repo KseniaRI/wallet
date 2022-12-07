@@ -1,8 +1,8 @@
-import { Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
 import { Logo } from 'components/logo/Logo';
-import { EyeButton, FieldWrap, IconWrap, StyledField, StyledForm, Svg } from '../registrationForm/RegistrationForm.styled';
+import { EyeButton, FieldWrap, IconWrap, StyledErrorMessage, StyledField, StyledForm, Svg } from '../registrationForm/AuthForms.styled';
 import { Button } from 'components/button/Button';
 import Sprite from '../../images/icons/symbol-defs.svg';
 import { useDispatch } from 'react-redux';
@@ -37,14 +37,21 @@ export const LoginForm = () => {
                 <FieldWrap>
                     <StyledField label="Email" name="email" type="email" id={idEmail} placeholder="E-mail"/>
                     <IconWrap><Svg><use href={`${Sprite}#icon-email`}></use></Svg></IconWrap>
+                    <StyledErrorMessage>
+                        <ErrorMessage name="email"/>
+                    </StyledErrorMessage>
                 </FieldWrap>
+                
                 <FieldWrap>
                     <StyledField label="Password" name="password" type={showPassword ? 'text' : 'password'} id={idPassword} placeholder="Password"/>
                     <IconWrap><Svg><use href={`${Sprite}#icon-lock`}></use></Svg></IconWrap>
                     <EyeButton type="button" onClick={() => setShowPassword(!showPassword)}>
                         {!showPassword ? <AiOutlineEyeInvisible color='#BDBDBD'/>:<AiOutlineEye color='#BDBDBD'/>}
                     </EyeButton>
-                </FieldWrap>    
+                    <StyledErrorMessage >
+                        <ErrorMessage name="password"/>
+                    </StyledErrorMessage>
+                </FieldWrap> 
                 <Button>
                     Log in
                 </Button>
