@@ -1,7 +1,7 @@
 import { Box } from "components/Box";
 import { Button } from "components/buttons/button/Button"
 import { ToogleSwitch } from "components/toogleSwitch/ToogleSwitch";
-import { Field, Formik } from "formik";
+import { ErrorMessage, Field, Formik } from "formik";
 import { nanoid } from 'nanoid';
 import { useEffect} from "react";
 import { createPortal } from "react-dom";
@@ -51,8 +51,8 @@ const ModalAddTransaction = ({ onClose }) => {
                     validationSchema={Yup.object({
                         date: Yup.string(),
                         type: Yup.bool(),
-                        category: Yup.string().required('Required'),
-                        comment: Yup.string(),
+                        category: Yup.string().oneOf(['Main', 'Food', 'Car', 'Children', 'Leisure', 'Home', 'Education', 'The rest']).required('Required'),
+                        comment: Yup.string().required('Required'),
                         amount: Yup.number('enter a number').positive().required('Required'),
                     })}  
                     onSubmit={({ date, type, category, comment, amount }, { resetForm }) => {
@@ -76,20 +76,22 @@ const ModalAddTransaction = ({ onClose }) => {
                         <ModalTitle>Add transaction</ModalTitle>
                         <Field name="type" component={ToogleSwitch} />  
                         {!values.type &&
-                            <Box as="div" position="relative" width="100%">
-                                <CategoryErrorMessage name="category" component="div" />
-                                <CategoryField defaultValue="choose" label="Category" as="select" name="category" id={idCategory}>
-                                    <Option value="Choose" >Choose category</Option>
-                                    <Option value="Main">Main</Option>
-                                    <Option value="Food">Food</Option>
-                                    <Option value="Car">Car</Option>
-                                    <Option value="Leisure">Leisure</Option>
-                                    <Option value="Children">Children</Option>
-                                    <Option value="Home">Home</Option>
-                                    <Option value="Education">Education</Option>
-                                    <Option value="The rest">The rest</Option>
-                                </CategoryField>
-                            </Box>
+                            <>
+                                <Box as="div" position="relative" width="100%">
+                                    <CategoryErrorMessage name="category" component="div" />
+                                    <CategoryField defaultValue="Choose" label="Category" as="select" name="category" id={idCategory}>
+                                        <Option value="Choose" >Choose category</Option>
+                                        <Option value="Main">Main</Option>
+                                        <Option value="Food">Food</Option>
+                                        <Option value="Car">Car</Option>
+                                        <Option value="Leisure">Leisure</Option>
+                                        <Option value="Children">Children</Option>
+                                        <Option value="Home">Home</Option>
+                                        <Option value="Education">Education</Option>
+                                        <Option value="The rest">The rest</Option>
+                                    </CategoryField>
+                                </Box>
+                            </>
                         }
                         <Box as="div" display="flex" width="100%" justifyContent="space-between" alignItems="flex-end" mb={40}>
                             <Box as="div" position="relative" width="100%">
@@ -98,8 +100,12 @@ const ModalAddTransaction = ({ onClose }) => {
                             </Box>
                             <Field name='date' timeFormat={false} component={FormikDateTime}/>            
                         </Box>
-                        <CommentField label="Comment" type="text" name="comment" id={idComment} placeholder="Comment" />
-
+                        <Box as="div" width="100%" position="relative" mb={50}>
+                            <CommentField label="Comment" type="text" name="comment" id={idComment} placeholder="Comment" />
+                            <Box as="div" position="absolute" color="red">
+                                <ErrorMessage name="comment" />
+                            </Box>
+                        </Box>
                         <Button type="submit">
                             Add
                         </Button>

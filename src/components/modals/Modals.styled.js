@@ -96,7 +96,6 @@ margin-bottom: 40px;
 
 export const CommentField = styled(StyledField)`
 width: 100%;
-margin-bottom: 50px;
 `
 export const ShortField = styled(StyledField)`
 padding-bottom: 10px;
@@ -125,5 +124,4 @@ position: absolute;
 top: 50%;
 color: red;
 `
-
 
