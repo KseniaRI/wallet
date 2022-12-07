@@ -1,6 +1,12 @@
 import styled from "@emotion/styled/macro";
 import { NavLink } from "react-router-dom";
 
+export const StyledNavLink = styled(NavLink)`
+    &.active{
+        font-weight: ${p => p.theme.fontWeights.bold};
+    }
+`;
+
 export const NavItem = styled.li`
     font-family: ${p => p.theme.fonts.title};
     font-size: ${p => p.theme.fontSizes.m};
@@ -15,12 +21,6 @@ export const NavItem = styled.li`
     }
 `;
 
-export const StyledNavLink = styled(NavLink)`
-    &.active{
-        font-weight: ${p => p.theme.fontWeights.bold};
-    }
-`;
-
 export const Svg = styled.svg`
 margin-right: 23px;
 width: 18px;
@@ -29,10 +29,15 @@ color: ${p => p.theme.colors.iconColor};
 fill: currentColor;
 transition:  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover,
-    &:focus,
     ${StyledNavLink}.active &{
      fill: ${p => p.theme.colors.accentColor};
      filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
     }
+
+    ${NavItem}:hover &,
+    ${NavItem}:focus & {
+     fill: ${p => p.theme.colors.accentColor};
+     filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
+    }
 `;
+

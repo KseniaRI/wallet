@@ -25,6 +25,7 @@ height: 30px;
 background-color: transparent;
 border: ${p => p.theme.borders.none};
 border-radius: ${p => p.theme.radii.round};
+transition:  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 &:hover,
 &:focus{
