@@ -5,7 +5,7 @@ import { Logo } from "components/logo/Logo";
 import { useSelector } from "react-redux";
 import { getUserName } from "redux/auth/auth-selectors";
 import { Loader } from "components/loader/Loader";
-import LogoutModal from "components/logoutModal/LogoutModal";
+import ModalLogout from "components/modals/modalLogout/ModalLogout";
 import { useState } from "react";
 
 export const Header = () => {
@@ -36,7 +36,7 @@ export const Header = () => {
                     </ButtonLogout>
                 </Box>
             </Container>
-            {isModalOpen && (<LogoutModal onClose={toggleModal} />)}
+            {isModalOpen && (<ModalLogout onClose={toggleModal} />)}
         </StyledHeader>
     )
 }

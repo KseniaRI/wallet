@@ -1,4 +1,4 @@
-import { LoginForm } from "components/loginForm/LoginForm";
+import { LoginForm } from "components/forms/loginForm/LoginForm";
 import { Container, RightBackground } from "pages/authLayout/AuthLayout.styled";
 import { LeftBackground } from "./LoginPage.styled";
 

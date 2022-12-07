@@ -1,5 +1,5 @@
 
-import Sprite from '../../images/icons/symbol-defs.svg';
+import Sprite from '../../../../images/icons/symbol-defs.svg';
 import { MobInput, CalendarButton, MobWrapper, StatWrapper, StatInput, StatButton } from "./RenderInput.styled";
 
 export const renderMobileInput = (props, openCalendar) => {

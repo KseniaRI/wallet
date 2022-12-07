@@ -1,6 +1,6 @@
 import Datetime from 'react-datetime';
 import moment from 'moment';
-import { renderMobileInput } from 'utils/renderInput/RenderInput';
+import { renderMobileInput } from 'components/modals/modalAddTransaction/renderInput/RenderInput';
 import { nanoid } from 'nanoid';
 
 

@@ -1,4 +1,4 @@
-import { RegistrationForm } from "components/registrationForm/RegistrationForm";
+import { RegistrationForm } from "components/forms/registrationForm/RegistrationForm";
 import { Container, RightBackground } from "pages/authLayout/AuthLayout.styled";
 import { LeftBackground } from "./RegistrationPage.styled";
 

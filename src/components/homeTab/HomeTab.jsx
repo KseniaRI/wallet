@@ -1,6 +1,6 @@
-import { ButtonAddTransactions } from "components/buttonAddTransactions/ButtonAddTransactions";
+import { ButtonAddTransactions } from "components/buttons/buttonAddTransactions/ButtonAddTransactions";
 import { TransactionTable } from "components/transactionTable/TransactionTable";
-import ModalAddTransaction from "components/modalAddTransaction/ModalAddTransaction";
+import ModalAddTransaction from "components/modals/modalAddTransaction/ModalAddTransaction";
 import { useState } from "react";
 import { HomeWrap } from "./Home.styled";
 

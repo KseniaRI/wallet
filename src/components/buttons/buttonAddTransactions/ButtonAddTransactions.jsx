@@ -1,5 +1,5 @@
 import { ButtonAdd, Svg } from "./ButtonAdd.styled";
-import Sprite from '../../images/icons/symbol-defs.svg';
+import Sprite from '../../../images/icons/symbol-defs.svg';
 
 export const ButtonAddTransactions = ({onClick}) => {
     return (

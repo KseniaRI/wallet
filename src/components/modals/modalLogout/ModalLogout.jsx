@@ -1,12 +1,12 @@
-import { Button } from "components/button/Button"
+import { Button } from "components/buttons/button/Button"
 import { useEffect} from "react";
 import { createPortal } from "react-dom";
 import "react-datetime/css/react-datetime.css";
 import 'moment/locale/it';
-import { Backdrop, Logout} from "../modalAddTransaction/Modals.styled";
+import { Backdrop, Logout} from "../Modals.styled";
 import { useDispatch } from "react-redux";
 import { Box } from "components/Box";
-import { ButtonClose, ModalTitle } from "components/modalAddTransaction/Modals.styled";
+import { ButtonClose, ModalTitle } from "components/modals/Modals.styled";
 import { TfiClose } from 'react-icons/tfi'
 import { logout } from "redux/auth/auth-operations";
 
