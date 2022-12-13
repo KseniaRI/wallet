@@ -39,15 +39,15 @@ export const Table = () => {
                     <StatBody>
                         <Box as="ul" width={40}>
                             {colorsOfCategories.map(color => 
-                                <Raw>
+                                <Raw key={color}>
                                     <Box as="div" display="block" width={24} height={24} borderRadius="icon" backgroundColor={color}  mr={16} fontSize="s" lineHeight="small"/>
                                 </Raw>)}
                         </Box>
                         <Box as="ul" width={199} >
-                            {categories.map(category => <Raw>{category}</Raw>)} 
+                            {categories.map(category => <Raw key={category}>{category}</Raw>)} 
                         </Box>
                         <Box as="ul" textAlign="right" flexGrow={1}>
-                            {expenses.map(expense => <Raw>{expense.toFixed(2)}</Raw>)} 
+                            {expenses.map((expense, index) => <Raw key={`${index}-${expense}`}>{expense.toFixed(2)}</Raw>)} 
                         </Box>   
                     </StatBody> 
                     <TFoot>

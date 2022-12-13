@@ -32,7 +32,7 @@ export const Chart = () => {
         <Doughnut data={data}
           width={320}
           height={320} />
-          <Expenses>&#8364; {sumExpenses(expenses)}</Expenses>
+        {expenses.length > 0 && <Expenses>&#8364; {sumExpenses(expenses)}</Expenses> }
         </Box>
     )
 }

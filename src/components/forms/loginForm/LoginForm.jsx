@@ -52,7 +52,7 @@ export const LoginForm = () => {
                         <ErrorMessage name="password"/>
                     </StyledErrorMessage>
                 </FieldWrap> 
-                <Button>
+                <Button type="submit">
                     Log in
                 </Button>
                 <StyledNavButton to="/register">

@@ -3,13 +3,14 @@ import { ButtonLogout, Container, StyledHeader, Svg } from "./header.styled";
 import Sprite from '../../images/icons/symbol-defs.svg';
 import { Logo } from "components/logo/Logo";
 import { useSelector } from "react-redux";
-import { getUserName } from "redux/auth/auth-selectors";
+import { getAvatarURL, getUserName } from "redux/auth/auth-selectors";
 import { Loader } from "components/loader/Loader";
 import ModalLogout from "components/modals/modalLogout/ModalLogout";
 import { useState } from "react";
 
 export const Header = () => {
-    const user = useSelector(getUserName);
+    const userName = useSelector(getUserName);
+    const avatarURL = useSelector(getAvatarURL);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const toggleModal = () => {
         setIsModalOpen(state => !state);
@@ -24,8 +25,16 @@ export const Header = () => {
                     alignItems="center"
                     color="secondaryTxtColor"
                     fontSize="m"
-                    lineHeight="normal">
-                    <span>{user}</span>
+                    lineHeight="normal"
+                >
+                    <Box as="div" width={20} height={20} borderRadius="round" 
+                    backgroundImage={`url(${avatarURL})`} 
+                    backgroundSize="contain"
+                    backgroundPosition="center"
+                    backgroundRepeat="no-repeat"
+                    mr={10}
+                    />
+                    <span>{userName}</span>
                     <Box as="div" width="1px" height="30px" mr={15} ml={15} backgroundColor="secondaryTxtColor"/>
                     <ButtonLogout type="button" onClick={toggleModal}>
                     <Svg>

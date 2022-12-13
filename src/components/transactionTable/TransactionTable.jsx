@@ -30,8 +30,8 @@ export const TransactionTable = () => {
                 </tr>
             </TransactionHeader>
             <tbody>
-                {transactionsList.map(({id,date, type, category, comment, amount, balance}) =>
-                    <tr key={id}>
+                {transactionsList.map(({_id, date, type, category, comment, amount, balance}) =>
+                    <tr key={_id}>
                         <Td>{date}</Td>
                         <Td>{type === true ? '+' : '-'}</Td>
                         <Td>{category}</Td>
