@@ -1,4 +1,5 @@
 import { combineReducers, createSlice } from "@reduxjs/toolkit";
+import moment from "moment";
 import { fetchTransactions, saveTransaction } from "./transactions-operations";
 
 const initialState = {
@@ -36,19 +37,23 @@ export const transactionsSlice = createSlice({
     }
 })
 
-// export const filterSlice = createSlice({
-//     name: 'filter',
-//     initialState: {
-//         value: '',
-//     },
-//     reducers: {
-//         changeFilter(state, action) {
-//             state.value = action.payload;
-//         },
-//     }
-// });
+export const filterSlice = createSlice({
+    name: 'filter',
+    initialState: {
+        month: moment().format("MM"),
+        year: moment().format("YYYY")
+    },
+    reducers: {
+        changeMonth(state, action) {
+            state.month = action.payload;
+        },
+        changeYear(state, action) {
+            state.year = action.payload;
+        }
+    }
+});
 
 export const transactionsReducer = combineReducers({
     items: transactionsSlice.reducer,
-    // filter: filterSlice.reducer,
+    filter: filterSlice.reducer,
 })

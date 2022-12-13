@@ -1,25 +1,36 @@
 import { Box } from "components/Box";
-// import Datetime from 'react-datetime';
+import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
-// import { renderStatInput } from "utils/renderInput/RenderInput";
+import { renderStatInput } from "../modals/modalAddTransaction/renderInput/RenderInput";
 import { Raw, StatBody, StatHeader, StatTable, TFoot } from "./Table.styled";
 import { calcDataDoughnut, sumExpenses, sumIncomes } from "utils/statistics/calculateData";
 import { doughnutColors } from '../../utils/statistics/doughnutColors'
-import { useSelector } from "react-redux";
-import { getTransactions } from "redux/transactions/transactions-selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { getVisibleTransactions } from "redux/transactions/transactions-selectors";
+import moment from 'moment';
+import { filterSlice } from "redux/transactions/transactions-slice";
 
 export const Table = () => {
-    const transactionsList = useSelector(getTransactions);
-    const { categories, expenses } = calcDataDoughnut(transactionsList);
+    const filteredTransactions = useSelector(getVisibleTransactions);
+    const dispatch = useDispatch();
+
+    const { categories, expenses } = calcDataDoughnut(filteredTransactions);
     const numOfRaws = categories.length;
     const colorsOfCategories = doughnutColors.slice(0, numOfRaws);
 
+    const onMonthChange = (value) => {
+        dispatch(filterSlice.actions.changeMonth(moment(value).format('MM')))
+    }
+    const onYearChange = (value) => {
+         dispatch(filterSlice.actions.changeYear(moment(value).format('YYYY')))
+    }
+
     return (
             <Box as="div" position="absolute" zIndex={1} right={85}>  
-                {/* <Box as="div" display="flex" width={351} justifyContent="space-between" mb={20}>
-                    <Datetime dateFormat="MM" renderInput={renderStatInput} timeFormat={false} initialValue="Month"/>
-                    <Datetime dateFormat="YYYY" renderInput={renderStatInput} timeFormat={false} initialValue="Year"/>
-                </Box> */}
+                <Box as="div" display="flex" width={351} justifyContent="space-between" mb={20}>
+                    <Datetime onChange={onMonthChange} dateFormat="MM" renderInput={renderStatInput} name="month" timeFormat={false} initialValue="Month"/>
+                    <Datetime onChange={onYearChange} dateFormat="YYYY" renderInput={renderStatInput} name="year" timeFormat={false} initialValue="Year"/>
+                </Box>
                 <StatTable>
                     <StatHeader>
                             <div>Category</div>
@@ -46,11 +57,10 @@ export const Table = () => {
                         </Box>
                         <Box as="div" display="flex" alignItems="center" justifyContent="space-between" width={300} m="0 auto">
                           <span>Incomes:</span>
-                        <span>{sumIncomes(transactionsList)}</span>
+                        <span>{sumIncomes(filteredTransactions)}</span>
                         </Box>
                     </TFoot>
                 </StatTable>
-                
             </Box>
         
     )

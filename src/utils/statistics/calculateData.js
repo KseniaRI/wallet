@@ -11,8 +11,6 @@ export const calcDataDoughnut = (transactions) => {
     const groupedCategories = groupBy(allExpenseCategories, "category");
     const categories = Object.keys(groupedCategories);
     const expenses = Object.values(groupedCategories).map(group => group.reduce((acc, el) => acc + el.amount, 0));
-    console.log(categories);
-    console.log(expenses)
     return { categories, expenses };
 }
 

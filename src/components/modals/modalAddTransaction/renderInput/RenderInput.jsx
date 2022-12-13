@@ -18,7 +18,7 @@ export const renderMobileInput = (props, openCalendar) => {
   
 export const renderStatInput = (props, openCalendar) => {
   return (
-    <StatWrapper>
+      <StatWrapper>
         <StatInput {...props} />
         <StatButton type="button" onClick={openCalendar}>
             <svg width="18" height="9">

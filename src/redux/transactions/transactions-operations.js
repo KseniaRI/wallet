@@ -8,7 +8,6 @@ axios.defaults.baseURL = 'https://wallet-db.onrender.com';
 export const fetchTransactions = createAsyncThunk('transactions/fetch', async (_, thunkAPI) => {
     try {
         const { data } = await axios.get('api/transactions');
-        console.log(data);
         return data;
     } catch (error) {
        return thunkAPI.rejectWithValue(error.message);

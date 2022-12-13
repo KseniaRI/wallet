@@ -6,13 +6,13 @@ import { calcDataDoughnut, sumExpenses } from "utils/statistics/calculateData";
 import { Expenses } from "./Chart.styled";
 import { doughnutColors } from '../../utils/statistics/doughnutColors';
 import { useSelector } from "react-redux";
-import { getTransactions } from "redux/transactions/transactions-selectors";
+import { getVisibleTransactions } from "redux/transactions/transactions-selectors";
 
 ChartJS.register(ArcElement, Tooltip);
 
 export const Chart = () => {
-  const transactionsList = useSelector(getTransactions);
-  const { categories, expenses } = calcDataDoughnut(transactionsList);
+  const filteredTransactions = useSelector(getVisibleTransactions);
+  const { categories, expenses } = calcDataDoughnut(filteredTransactions);
 
   const data = {
   labels: categories,
