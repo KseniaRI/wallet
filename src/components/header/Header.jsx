@@ -1,5 +1,5 @@
 import { Box } from "components/Box";
-import { ButtonLogout, HeaderContainer, StyledHeader, Svg } from "./Header.styled";
+import { ButtonLogout, HeaderContainer, StyledHeader, Svg } from "./header.styled";
 import Sprite from '../../images/icons/symbol-defs.svg';
 import { Logo } from "components/logo/Logo";
 import { useSelector } from "react-redux";
