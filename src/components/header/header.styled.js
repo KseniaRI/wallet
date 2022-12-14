@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 
+
+
 export const StyledHeader = styled.header`
     position: fixed;
     z-index:2;
