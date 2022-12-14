@@ -8,6 +8,6 @@ export const Logo = () => {
                         <use href={`${Sprite}#icon-logo`}></use>
                     </Svg> 
                     Wallet
-                </LogoLink> 
+        </LogoLink> 
     )
 }

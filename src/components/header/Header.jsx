@@ -1,5 +1,5 @@
 import { Box } from "components/Box";
-import { ButtonLogout, Container, StyledHeader, Svg } from "./header.styled";
+import { ButtonLogout, HeaderContainer, StyledHeader, Svg } from "./Header.styled";
 import Sprite from '../../images/icons/symbol-defs.svg';
 import { Logo } from "components/logo/Logo";
 import { useSelector } from "react-redux";
@@ -18,7 +18,7 @@ export const Header = () => {
 
     return (
         <StyledHeader>
-            <Container>
+            <HeaderContainer>
                 <Logo/>
                 <Box as="div"
                     display="flex"
@@ -44,7 +44,7 @@ export const Header = () => {
                         <Loader />
                     </ButtonLogout>
                 </Box>
-            </Container>
+            </HeaderContainer>
             {isModalOpen && (<ModalLogout onClose={toggleModal} />)}
         </StyledHeader>
     )

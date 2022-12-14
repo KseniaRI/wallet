@@ -12,7 +12,12 @@ color: ${p => p.theme.colors.mainTxtColor};
 `;
 
 export const Svg = styled.svg`
-width: 40px;
-height: 40px;
-margin-right: 20px;
+width: 30px;
+height: 30px;
+margin-right: 15.5px;
+    @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 40px; 
+    margin-right: 20px;
+}
 `;

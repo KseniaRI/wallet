@@ -7,8 +7,13 @@ margin-bottom: 30px;
 
 export const PasswordStrengthMeterProgress = styled.progress`
 appearance: none;
-width: 410px;
+width: 280px;
 height: 6px;
+
+@media screen and (min-width: 768px) {
+ width: 410px;   
+}
+
 
  &::-webkit-progress-bar {
     background-color: #E5F1EF;

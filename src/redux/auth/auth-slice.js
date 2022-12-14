@@ -17,32 +17,38 @@ export const authSlice = createSlice({
         [signup.pending](state) {
             state.isLoggedIn = false;
             state.isAuthorising = true;
+            state.isRefreshingUser = true;
         },
         [signup.fulfilled](state, action){
             state.user = action.payload.data.user;
             state.token = action.payload.data.token;
             state.isLoggedIn = true;
             state.isAuthorising = false;
+            state.isRefreshingUser = false;
         },
         [signup.rejected](state, action) {
             state.isLoggedIn = false;
             state.error = action.payload;
             state.isAuthorising = false;
+            state.isRefreshingUser = false;
         },
         [login.pending](state) {
             state.isLoggedIn = false;
             state.isAuthorising = true;
+            state.isRefreshingUser = true;
         },
         [login.fulfilled](state, action){
             state.user = action.payload.data.user;
             state.token = action.payload.data.token;
             state.isLoggedIn = true;
             state.isAuthorising = false;
+            state.isRefreshingUser = false;
         },
         [login.rejected](state, action) {
             state.isLoggedIn = false;
             state.error = action.payload;
             state.isAuthorising = false;
+             state.isRefreshingUser = false;
         },
         [logout.pending](state) {
             state.isLoggedIn = true;

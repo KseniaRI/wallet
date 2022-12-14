@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
@@ -22,8 +22,7 @@ export const App = () => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
 
-
-  return (
+  return  (
     <Suspense fallback={<Loader/>}>
       <Routes>
         <Route path='/' element={<AuthLayout />}>

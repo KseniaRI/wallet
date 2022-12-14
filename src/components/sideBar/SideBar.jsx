@@ -4,6 +4,7 @@ import { Currency } from "components/currency/Currency"
 import { Navigation } from "components/navigation/Navigation"
 
 export const SideBar = () => {
+
     return (
         <Box as="div"
         width={380}

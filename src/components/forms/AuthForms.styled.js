@@ -2,18 +2,30 @@ import styled from "@emotion/styled";
 import { Field, Form } from "formik";
 
 export const StyledForm = styled(Form)`
-position: absolute;
 display: flex;
-flex-direction: column;
-align-items: center;
+position: absolute;
 top: 50%;
 left: 50%;
-padding: 40px 65px 60px 65.5px;
 transform: translate(-50%, -50%);
 z-index: 1;
-width: 540px;
+flex-direction: column;
+align-items: center;
+width: 320px;
+padding-left: 20px;
+padding-right: 20px;
 background-color: ${p => p.theme.colors.lightBackgroundColor};
 border-radius: ${p => p.theme.radii.form};
+
+    @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 540px;   
+    padding: 40px 65px 60px 65.5px;
+    }
+
 `;
 
 export const FieldWrap = styled.div`

@@ -5,7 +5,7 @@ export const StyledButton = styled.button`
 display: flex;
 align-items: center;
 justify-content: center;
-width: 300px;
+width: 280px;
 height: 50px;
 border: ${p => p.theme.borders.normal}; 
 border-color: ${p => p.theme.colors.accentColor};
@@ -25,13 +25,16 @@ margin-bottom: 20px;
    color: ${p => p.theme.colors.lightTxtColor}; 
    border: ${p => p.theme.borders.none}; 
 }
+   @media screen and (min-width: 768px) {
+      width: 300px;
+   }
 `;
 
 export const StyledNavButton = styled(NavLink)`
 display: flex;
 align-items: center;
 justify-content: center;
-width: 300px;
+width: 280px;
 height: 50px;
 border: ${p => p.theme.borders.normal}; 
 border-color: ${p => p.theme.colors.accentColor};
@@ -51,4 +54,7 @@ margin-bottom: 20px;
    color: ${p => p.theme.colors.lightTxtColor}; 
    border: ${p => p.theme.borders.none}; 
 }
+   @media screen and (min-width: 768px) {
+      width: 300px;
+   }
 `

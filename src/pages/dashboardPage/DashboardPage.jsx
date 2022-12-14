@@ -2,7 +2,7 @@ import { Suspense, useEffect } from "react"
 import { Outlet } from "react-router-dom"
 import { Header } from "components/header/Header"
 import { SideBar } from "components/sideBar/SideBar"
-import { Container } from "./DashboardPage.styled"
+import { DashboardContainer } from "./DashboardPage.styled"
 import { Box } from "components/Box"
 import { useDispatch } from "react-redux"
 import { fetchCurrentUser } from "redux/auth/auth-operations"
@@ -23,7 +23,7 @@ const DashboardPage = () => {
             <main>
                 <Box as="section"
                     pt="80px">
-                    <Container>
+                    <DashboardContainer>
                         <SideBar />
                         <Box as="div"
                             width="1px"
@@ -33,7 +33,7 @@ const DashboardPage = () => {
                         <Suspense fallback={<Loader />}>
                             <Outlet />
                         </Suspense>
-                    </Container>
+                    </DashboardContainer>
                 </Box>    
             </main>
             <ToastContainer autoClose={2000} />

@@ -2,7 +2,7 @@ import { ErrorMessage, Formik } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
 import { Logo } from 'components/logo/Logo';
-import { EyeButton, FieldWrap, IconWrap, StyledErrorMessage, StyledField, StyledForm, Svg } from '../registrationForm/AuthForms.styled';
+import { EyeButton, FieldWrap, IconWrap, StyledErrorMessage, StyledField, StyledForm, Svg } from '../AuthForms.styled';
 import { Button } from 'components/buttons/button/Button';
 import Sprite from '../../../images/icons/symbol-defs.svg';
 import { useDispatch } from 'react-redux';

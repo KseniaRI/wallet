@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getTransactions } from "redux/transactions/transactions-selectors";
 import { useEffect } from "react";
 import { fetchTransactions } from "redux/transactions/transactions-operations";
+import { fetchCurrentUser } from "redux/auth/auth-operations";
 
 export const TransactionTable = () => {
     const transactionsList = useSelector(getTransactions);
@@ -11,8 +12,10 @@ export const TransactionTable = () => {
     const dispatch = useDispatch();
   
     useEffect(() => {
+        dispatch(fetchCurrentUser());
         dispatch(fetchTransactions());
     }, [dispatch]);
+
 
 
     const addClass = (type) => type ? "income" : "expense";  

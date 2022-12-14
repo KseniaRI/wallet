@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import ellipseLeft from '../../images/ellipse-left.png';
 import ellipseRight from '../../images/ellipse-right.png'
 
-export const Container = styled.div`
+export const DashboardContainer = styled.div`
 position: relative;
 width: 1280px;
 margin: 0 auto;
