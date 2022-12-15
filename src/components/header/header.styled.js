@@ -2,26 +2,52 @@ import styled from "@emotion/styled";
 
 export const StyledHeader = styled.header`
     position: fixed;
-    z-index:2;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    left: calc((100% - 1280px) / 2);
+    z-index: 5;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    left: calc((100% - 320px) / 2);
     background-color: #fff;
+
+    @media screen and (min-width: 768px) {
+      left: calc((100% - 768px) / 2);  
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      left: calc((100% - 1280px) / 2);  
+    }
+
 `;
 
 export const HeaderContainer = styled.div`
-width: 1280px;
+width: 320px;
 margin: 0 auto;
 display: flex;
 justify-content: space-between;
-padding-left: 85px;
-padding-right: 85px;
+padding-left: 20px;
+padding-right: 20px;
+
+@media screen and (min-width: 768px) {
+      width: 768px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 1280px;
+      padding-left: 85px;
+      padding-right: 85px;
+    }
 `;
 
 export const Svg = styled.svg`
 width: 18px;
 height: 18px;
+
+@media screen and (min-width: 768px) {
 margin-right: 20px;
+}
 `;
 
 

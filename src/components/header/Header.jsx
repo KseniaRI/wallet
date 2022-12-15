@@ -7,6 +7,7 @@ import { getAvatarURL, getUserName } from "redux/auth/auth-selectors";
 import { Loader } from "components/loader/Loader";
 import ModalLogout from "components/modals/modalLogout/ModalLogout";
 import { useState } from "react";
+import Media from 'react-media';
 
 export const Header = () => {
     const userName = useSelector(getUserName);
@@ -37,10 +38,10 @@ export const Header = () => {
                     <span>{userName}</span>
                     <Box as="div" width="1px" height="30px" mr={15} ml={15} backgroundColor="secondaryTxtColor"/>
                     <ButtonLogout type="button" onClick={toggleModal}>
-                    <Svg>
-                        <use href={`${Sprite}#icon-logout`}></use>
+                        <Svg>
+                            <use href={`${Sprite}#icon-logout`}></use>
                         </Svg>
-                        Logout
+                        <Media query="(min-width: 768px)" render={() => <span>Logout</span>}/>
                         <Loader />
                     </ButtonLogout>
                 </Box>

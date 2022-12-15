@@ -7,6 +7,13 @@ export const StyledNavLink = styled(NavLink)`
     }
 `;
 
+export const NavList = styled.ul`
+    @media screen and (max-width: 767px) { 
+    display: flex;
+    justify-content: center;
+    }
+`;
+
 export const NavItem = styled.li`
     font-family: ${p => p.theme.fonts.title};
     font-size: ${p => p.theme.fontSizes.m};

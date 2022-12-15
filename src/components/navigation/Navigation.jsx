@@ -1,16 +1,16 @@
-import { Box } from "components/Box"
-import { NavItem, StyledNavLink, Svg } from "./Navigation.styled";
+import { NavItem, NavList, StyledNavLink, Svg } from "./Navigation.styled";
 import Sprite from '../../images/icons/symbol-defs.svg';
+import Media from 'react-media';
 
 export const Navigation = () => {
     return (
-        <Box as="ul">
+        <NavList>
             <NavItem>
                 <StyledNavLink to='/dashboard/home'>
                     <Svg>
                         <use href={`${Sprite}#icon-home`}></use>
                     </Svg>
-                    Home
+                    <Media query="(min-width: 768px)" render={() => <span>Home</span>} />  
                 </StyledNavLink>
             </NavItem>
             <NavItem>
@@ -18,9 +18,9 @@ export const Navigation = () => {
                     <Svg>
                          <use href={`${Sprite}#icon-stat`}></use>
                     </Svg>
-                    Statistics
+                    <Media query="(min-width: 768px)" render={() => <span>Statistics</span>} />
                 </StyledNavLink>
             </NavItem>
-        </Box>
+        </NavList>
     )
 }

@@ -6,10 +6,10 @@ position: relative;
 border-radius: ${p => p.theme.radii.ellipse};
 color: ${p => p.theme.colors.lightTxtColor};
 background-color: ${p => p.theme.colors.accentColor};
-width: 348px;
-height: 347px;
+width: 100%;
 padding-left: 70px; 
 padding-right: 70px;
+z-index: 3;
 
     &::before{
         content: '';
@@ -27,13 +27,16 @@ padding-right: 70px;
         content: '';
         position: absolute;
         left: 0;
-        top: 213px;
+        top: 180px;
         background-image: url(${Wave});
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-       height: 134px;
+        height: 134px;
         width: 100%; 
+    }
+    tr{
+      height: 40px;
     }
 
     tr td{
@@ -42,6 +45,16 @@ padding-right: 70px;
 
     tr td:first-of-type{
       text-align: left;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 334px;
+    }
+
+    @media screen and (min-width: 1280px) {
+    width: 348px;
+    padding-left: 70px; 
+    padding-right: 70px;
     }
 `;
 
@@ -60,12 +73,12 @@ line-height: ${p => p.theme.lineHeights.normal};
 `;
 
 export const TBody = styled.tbody`
-height: 153px;
-font-size: ${p => p.theme.fontSizes.m};
+/* height: 153px; */
+font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.lineHeights.normal};
 `;
 
-export const TFoot = styled.tfoot`
-height: 134px;
-`;
+// export const TFoot = styled.tfoot`
+
+// `;
 

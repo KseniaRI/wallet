@@ -6,9 +6,13 @@ display: flex;
 align-items: center;
 font-family: ${p => p.theme.fonts.title}, sans-serif;
 font-weight: ${p => p.theme.fontWeights.bold};
-font-size: ${p => p.theme.fontSizes.l};
+font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.lineHeights.normal};
 color: ${p => p.theme.colors.mainTxtColor};
+
+@media screen and (min-width: 768px) {
+font-size: ${p => p.theme.fontSizes.l};
+}
 `;
 
 export const Svg = styled.svg`

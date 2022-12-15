@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchLatestRates } from "services/currency-api";
-import { CurrencyTable, TBody, TFoot, THead } from "./Currency.styled";
+import { CurrencyTable, TBody, THead } from "./Currency.styled";
 
 export const Currency = () => {
     const [latestRates, setLatestRates] = useState(JSON.parse(localStorage.getItem('currencies')) ?? [
@@ -46,7 +46,7 @@ export const Currency = () => {
                         <td>{currency[1].toFixed(2)}</td>
                     </tr>)}     
             </TBody>
-            <TFoot/>         
+            {/* <TFoot/>          */}
         </CurrencyTable>
     )
 }
