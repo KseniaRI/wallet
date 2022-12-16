@@ -4,7 +4,7 @@ import ellipseRight from '../../images/ellipse-right.png';
 
 export const AuthContainer = styled.div`
 width: 100%;
-height: 568px;
+height: 100vh;
 margin: 0 auto;
 background-color: ${p => p.theme.colors.lightBackgroundColor};
     
@@ -14,7 +14,6 @@ background-color: ${p => p.theme.colors.lightBackgroundColor};
     @media screen and (min-width: 768px) {
         position: relative;
         width: 768px;
-        height: 1024px;
         overflow: hidden;
         background-color: ${p => p.theme.colors.backgroundColor};
 
@@ -47,7 +46,6 @@ background-color: ${p => p.theme.colors.lightBackgroundColor};
     @media screen and (min-width: 1280px) {
         display: flex;  
         width: 1280px;
-        height: 720px;
     }
 `;
 
@@ -55,7 +53,7 @@ export const RightBackground = styled.div`
     @media screen and (min-width: 1280px) {
         position: relative;
         width: 720px;
-        height: 720px;
+        height: 100%;
         background-color: ${p => p.theme.colors.secondaryBackgroundColor};
     }
 `;

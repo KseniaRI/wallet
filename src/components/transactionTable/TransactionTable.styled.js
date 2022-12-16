@@ -38,8 +38,6 @@ font-size: ${p => p.theme.fontSizes.m};
 line-height: ${p => p.theme.lineHeights.normal};
 height: 58px;
 width: 700px;
-
-
     th{
        text-align: left;  
        padding-left: 20px;

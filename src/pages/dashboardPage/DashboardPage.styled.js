@@ -4,7 +4,6 @@ import ellipseRight from '../../images/ellipse-right.png'
 
 export const Section = styled.section`
 padding-top: 60px;
-
   @media screen and (min-width: 768px) {
     padding-top: 80px;
   }
@@ -22,17 +21,14 @@ padding-left: 20px;
 padding-right: 20px;
 background-color: ${p => p.theme.colors.backgroundColor};
 overflow: hidden;
-
 @media screen and (min-width: 320px) {
    width: 320px; 
  } 
-
  @media screen and (min-width: 768px) {
    width: 768px; 
    height: 1024px;
    padding-left: 40px;
    padding-right: 40px;
-
    &::before {
     content: "";
     position: absolute;
@@ -46,7 +42,6 @@ overflow: hidden;
     filter: blur(15px);
     opacity: 0.6;
     }
-
     &::after {
     content: "";
     position: absolute;
@@ -61,11 +56,10 @@ overflow: hidden;
     opacity: 0.6;
     }
  }
-
  @media screen and (min-width: 1280px) {
    flex-direction: row; 
    width: 1280px; 
-   height: 720px;
+   height: 1020px;
    padding-left: 85px;
    padding-right: 85px;
  } 

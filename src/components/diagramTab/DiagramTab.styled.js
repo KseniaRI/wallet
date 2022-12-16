@@ -6,7 +6,6 @@ font-size: ${p => p.theme.fontSizes.l};
 line-height: ${p => p.theme.lineHeights.normal};
 font-weight: ${p => p.theme.fontWeights.normal};
 margin-bottom: 10px;
-
  @media screen and (min-width: 768px) {
     margin-bottom: 20px;
     }
@@ -20,11 +19,9 @@ export const DiagramTabWrap = styled.div`
     padding-top: 30px;
     padding-left: 30px;
     }
-
 `;
 
 export const StatisticsWrap = styled.div`
-
 @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;

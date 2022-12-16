@@ -6,7 +6,6 @@ width: 100%;
  padding-left: 10px;
  overflow-y: scroll;
  overflow-x: initial;
-
     @media screen and (max-width: 767px) {
     width: 100%;
     height: 100%;
