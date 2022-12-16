@@ -38,14 +38,19 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-width: 540px;
-height: 617px;
+width: 310px;
+height: 650px;
 padding-top: 40px;
 padding-right: 63px;
 padding-left: 67px;
 border: ${p => p.theme.borders.none};
 border-radius: ${p => p.theme.radii.form};
 background-color: ${p => p.theme.colors.lightBackgroundColor};
+
+@media screen and (min-width: 768px) {
+    width: 540px;
+    height: 617px;
+    }
 `;
 
 export const Logout = styled.div`
@@ -53,20 +58,26 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-width: 440px;
-height: 440px;
+width: 300px;
+height: 460px;
 padding-top: 80px;
 padding-right: 63px;
 padding-left: 67px;
 border: ${p => p.theme.borders.none};
 border-radius: ${p => p.theme.radii.form};
 background-color: ${p => p.theme.colors.lightBackgroundColor};
+
+@media screen and (min-width: 768px) {
+    width: 440px;
+    height: 440px;
+    }
 `;
 
 export const StyledForm = styled(Form)`
 display: flex;
 flex-direction: column;
 align-items: center;
+width: 100%;
 `;
 
 export const ModalTitle = styled.h2`
@@ -97,7 +108,31 @@ margin-bottom: 40px;
 
 export const CommentField = styled(StyledField)`
 width: 100%;
-`
+`;
+
+export const FieldsWrap = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+margin-bottom: 40px;
+
+@media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    }
+`;
+
+export const AmountFieldWrap = styled.div`
+position: relative;
+width: 100%;
+margin-bottom: 40px;
+
+@media screen and (min-width: 768px) {
+  margin-bottom: 0;
+}
+`;
+
 export const ShortField = styled(StyledField)`
 padding-bottom: 10px;
 text-align: center;

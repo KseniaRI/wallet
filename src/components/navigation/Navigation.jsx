@@ -21,6 +21,15 @@ export const Navigation = () => {
                     <Media query="(min-width: 768px)" render={() => <span>Statistics</span>} />
                 </StyledNavLink>
             </NavItem>
+            <NavItem>
+                <Media query="(max-width: 768px)" render={() => (
+                <StyledNavLink to='/dashboard/currency'>
+                    <Svg>
+                         <use href={`${Sprite}#icon-currency`}></use>
+                    </Svg>
+                </StyledNavLink>)
+                } />
+            </NavItem>
         </NavList>
     )
 }

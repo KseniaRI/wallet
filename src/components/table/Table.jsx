@@ -1,8 +1,8 @@
 import { Box } from "components/Box";
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
-import { renderStatInput } from "../modals/modalAddTransaction/renderInput/RenderInput";
-import { Raw, StatBody, StatHeader, StatTable, TFoot } from "./Table.styled";
+import { renderStatInput } from "../../utils/renderInput/RenderInput";
+import { FilterWrap, Raw, StatBody, StatHeader, StatTable, TableWrap, TFoot, WrapTotal } from "./Table.styled";
 import { calcDataDoughnut, sumExpenses, sumIncomes } from "utils/statistics/calculateData";
 import { doughnutColors } from '../../utils/statistics/doughnutColors'
 import { useDispatch, useSelector } from "react-redux";
@@ -26,11 +26,11 @@ export const Table = () => {
     }
 
     return (
-            <Box as="div" position="absolute" zIndex={1} right={85}>  
-                <Box as="div" display="flex" width={351} justifyContent="space-between" mb={20}>
+            <TableWrap>  
+                <FilterWrap>
                     <Datetime onChange={onMonthChange} dateFormat="MM" renderInput={renderStatInput} name="month" timeFormat={false} initialValue="Month"/>
                     <Datetime onChange={onYearChange} dateFormat="YYYY" renderInput={renderStatInput} name="year" timeFormat={false} initialValue="Year"/>
-                </Box>
+                </FilterWrap>
                 <StatTable>
                     <StatHeader>
                             <div>Category</div>
@@ -51,17 +51,17 @@ export const Table = () => {
                         </Box>   
                     </StatBody> 
                     <TFoot>
-                        <Box as="div"  display="flex" alignItems="center" justifyContent="space-between" width={300} m="0 auto">
+                        <WrapTotal>
                           <span>Expenses:</span>
                         <span>{sumExpenses(expenses)}</span>
-                        </Box>
-                        <Box as="div" display="flex" alignItems="center" justifyContent="space-between" width={300} m="0 auto">
+                        </WrapTotal>
+                        <WrapTotal>
                           <span>Incomes:</span>
                         <span>{sumIncomes(filteredTransactions)}</span>
-                        </Box>
+                        </WrapTotal>
                     </TFoot>
                 </StatTable>
-            </Box>
+            </TableWrap>
         
     )
 }

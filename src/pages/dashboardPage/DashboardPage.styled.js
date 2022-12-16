@@ -16,7 +16,7 @@ display: flex;
 justify-content: flex-start;
 flex-direction: column;
 width: 100%;
-height: 568px;
+height: 1313px;
 margin: 0 auto;
 padding-left: 20px;
 padding-right: 20px;

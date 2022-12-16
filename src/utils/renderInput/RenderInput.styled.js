@@ -37,7 +37,11 @@ border-radius: ${ p => p.theme.radii.ellipse};
 background-color: transparent;
 font-size: ${ p => p.theme.fontSizes.s};
 line-height: ${ p => p.theme.lineHeights.normal};
+width: 100%;
+
+@media screen and (min-width: 767px){
 width: 166px;
+}
 `;
 
 export const StatButton = styled.button`

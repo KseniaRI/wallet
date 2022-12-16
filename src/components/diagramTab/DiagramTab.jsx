@@ -1,16 +1,15 @@
-import { Box } from "components/Box";
 import { Chart } from "components/chart/Chart";
 import { Table } from "components/table/Table";
-import { DiagramTabWrap, Title } from "./DiagramTab.styled";
+import { DiagramTabWrap, StatisticsWrap, Title } from "./DiagramTab.styled";
 
 const DiagramTab = () => {
     return (
         <DiagramTabWrap>
             <Title>Statistics</Title>
-            <Box as="div" display="flex">
+            <StatisticsWrap>
                 <Chart />
                 <Table/>
-            </Box>    
+            </StatisticsWrap>    
         </DiagramTabWrap>
     )
 }

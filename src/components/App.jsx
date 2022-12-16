@@ -6,6 +6,7 @@ import { fetchCurrentUser } from 'redux/auth/auth-operations';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
 import { Loader } from './loader/Loader';
+import { Currency } from './currency/Currency';
 
 const DashboardPage = lazy(() => import('../pages/dashboardPage/DashboardPage'));
 const HomeTab = lazy(() => import('./homeTab/HomeTab'));
@@ -32,6 +33,7 @@ export const App = () => {
         <Route path='/dashboard' element={<PrivateRoute component={<DashboardPage />} />}>
           <Route path='home' element={<HomeTab />} />
           <Route path='diagram' element={<DiagramTab />} />
+          <Route path='currency' element={<Currency/>} />
         </Route>
         <Route path="*" element={<LoginPage/>} />
       </Routes>

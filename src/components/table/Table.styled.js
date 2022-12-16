@@ -1,13 +1,37 @@
 import styled from "@emotion/styled";
-import Datetime from 'react-datetime';
 
-export const DatetimeStyled = styled(Datetime)`
-width: 166px;
-height: 50px;
+export const TableWrap = styled.div`
+@media screen and (min-width: 768px) {
+    position:absolute;
+    z-index: 1;
+    right: 40px;
+}
+@media screen and (min-width: 1280px) {
+    right: 85px;
+}
+`;
+
+export const FilterWrap = styled.div`
+display: flex;
+flex-direction: column;
+ margin-bottom: 20px;
+ width: 100%;
+ height: 120px;
+ justify-content: space-between;
+
+@media screen and (min-width: 768px) {
+    flex-direction: row;
+    width: 351px;
+    height: 50px;
+    }
 `;
 
 export const StatTable = styled.div`
+width: 100%;
+
+ @media screen and (min-width: 768px) {
 width: 350px;
+}
 `;
 
 export const StatHeader = styled.div`
@@ -48,4 +72,16 @@ line-height: ${p => p.theme.lineHeights.normal};
 font-weight: ${p => p.theme.fontWeights.bold};
 padding-left: 15px;
 padding-right: 30px;
+`;
+
+export const WrapTotal = styled.div`
+display: flex;
+align-items: center;
+justify-content:space-between;
+margin: 0 auto;
+width: 100%;
+
+@media screen and (min-width: 768px) {
+width: 300px;
+}
 `;

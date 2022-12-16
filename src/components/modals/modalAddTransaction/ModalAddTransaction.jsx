@@ -10,7 +10,7 @@ import "react-datetime/css/react-datetime.css";
 import moment from 'moment';
 import 'moment/locale/it';
 import * as Yup from 'yup';
-import { AmountErrorMessage, Backdrop, ButtonClose, CategoryErrorMessage, CategoryField, CommentField, Modal, ModalTitle, Option, ShortField, StyledForm} from "../Modals.styled";
+import { AmountErrorMessage, AmountFieldWrap, Backdrop, ButtonClose, CategoryErrorMessage, CategoryField, CommentField, FieldsWrap, Modal, ModalTitle, Option, ShortField, StyledForm} from "../Modals.styled";
 import { useDispatch } from "react-redux";
 import { saveTransaction } from "redux/transactions/transactions-operations";
 import FormikDateTime from "./FormikDatetime";
@@ -93,13 +93,13 @@ const ModalAddTransaction = ({ onClose }) => {
                                 </Box>
                             </>
                         }
-                        <Box as="div" display="flex" width="100%" justifyContent="space-between" alignItems="flex-end" mb={40}>
-                            <Box as="div" position="relative" width="100%">
+                        <FieldsWrap>
+                            <AmountFieldWrap>
                                 <ShortField label="Amount" type="number" name="amount" id={idAmount} placeholder="0.00" />
                                 <AmountErrorMessage name="amount" component="div" />
-                            </Box>
+                            </AmountFieldWrap>
                             <Field name='date' timeFormat={false} component={FormikDateTime}/>            
-                        </Box>
+                        </FieldsWrap>
                         <Box as="div" width="100%" position="relative" mb={50}>
                             <CommentField label="Comment" type="text" name="comment" id={idComment} placeholder="Comment" />
                             <Box as="div" position="absolute" color="red">
