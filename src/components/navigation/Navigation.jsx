@@ -22,7 +22,7 @@ export const Navigation = () => {
                 </StyledNavLink>
             </NavItem>
             <NavItem>
-                <Media query="(max-width: 768px)" render={() => (
+                <Media query="(max-width: 767px)" render={() => (
                 <StyledNavLink to='/dashboard/currency'>
                     <Svg>
                          <use href={`${Sprite}#icon-currency`}></use>
