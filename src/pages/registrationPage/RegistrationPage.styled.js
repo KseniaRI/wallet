@@ -16,8 +16,8 @@ export const LeftBackground = styled.div`
         width: 410px;
         height: 413px;
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%)
+        top: 70%;
+        transform: translate(-50%, -70%)
     }
 }
 `;
