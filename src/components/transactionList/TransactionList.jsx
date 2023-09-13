@@ -9,19 +9,21 @@ import { StyledTransactionList, TransactionItem } from "./TransactionCard.styled
 
 export const TransactionList = () => {
     const dispatch = useDispatch();
+    
     useEffect(() => {
         dispatch(fetchCurrentUser());
         dispatch(fetchTransactions());
-    },[dispatch])
+    }, [dispatch])
+    
     const transactions = useSelector(getTransactions);
     
     return (
-            <StyledTransactionList>
-                {transactions.length > 0 && transactions.map(transaction => (
-                    <TransactionItem key={transaction._id} className={addClass(transaction.type)}>
-                        <TransactionCard transaction={transaction} />
-                    </TransactionItem>
-                ))}
-            </StyledTransactionList>       
+        <StyledTransactionList>
+            {transactions.length > 0 && transactions.map(transaction => (
+                <TransactionItem key={transaction._id} className={addClass(transaction.type)}>
+                    <TransactionCard transaction={transaction} />
+                </TransactionItem>
+            ))}
+        </StyledTransactionList>       
     )
 }

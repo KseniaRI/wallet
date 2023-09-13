@@ -19,11 +19,17 @@ export const ToogleSwitch = ({ field, form}) => {
     }
     
     return (
-            <SwitchLabel>
-                <Income className={addClass(!isChecked)}>Income</Income> 
-                <SwitchField checked={isChecked} type="checkbox" id={idSwitch} name={field.name} onChange={handleCheckChange} />
-                    <Slider />
-                <Expence className={addClass(isChecked)}>Expence</Expence>
-            </SwitchLabel>  
+        <SwitchLabel>
+            <Income className={addClass(!isChecked)}>Income</Income> 
+            <SwitchField
+                checked={isChecked}
+                type="checkbox"
+                id={idSwitch}
+                name={field.name}
+                onChange={handleCheckChange}
+            />
+                <Slider />
+            <Expence className={addClass(isChecked)}>Expence</Expence>
+        </SwitchLabel>  
     )
 }

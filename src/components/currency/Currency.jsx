@@ -3,11 +3,12 @@ import { fetchLatestRates } from "services/currency-api";
 import { CurrencyTable, TBody, THead } from "./Currency.styled";
 
 export const Currency = () => {
+
     const [latestRates, setLatestRates] = useState(JSON.parse(localStorage.getItem('currencies')) ?? [
         ["USD",1.03455],["GBP",0.87021],["RUB",62.952736],["AED",3.799944],["CNY",7.365895]
     ]);
 
-    // const [requestDate, setRequestDate] = useState("");
+    // const [requestDate, setRequestDate] = useState(""); // expire permission on API
    
     useEffect(() => {
         const getLatestRates = async () => {
@@ -46,7 +47,6 @@ export const Currency = () => {
                         <td>{currency[1].toFixed(2)}</td>
                     </tr>)}     
             </TBody>
-            {/* <TFoot/>          */}
         </CurrencyTable>
     )
 }

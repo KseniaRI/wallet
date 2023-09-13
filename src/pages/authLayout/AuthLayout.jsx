@@ -1,8 +1,7 @@
-
-import { Loader } from 'components/loader/Loader';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { Loader } from 'components/loader/Loader';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContainer } from './AuthLayout.styled'
 

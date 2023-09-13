@@ -1,11 +1,10 @@
-import { ThLeft, ThRight, TransactionHeader, Transaction, Td } from "./TransactionTable.styled"
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { getTransactions } from "redux/transactions/transactions-selectors";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getTransactions } from "redux/transactions/transactions-selectors";
 import { fetchTransactions } from "redux/transactions/transactions-operations";
 import { fetchCurrentUser } from "redux/auth/auth-operations";
 import { addClass } from "utils/addClass";
+import { ThLeft, ThRight, TransactionHeader, Transaction, Td } from "./TransactionTable.styled"
 
 export const TransactionTable = () => {
     const transactionsList = useSelector(getTransactions);

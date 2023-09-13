@@ -1,6 +1,6 @@
+import Media from 'react-media';
 import { NavItem, NavList, StyledNavLink, Svg } from "./Navigation.styled";
 import Sprite from '../../images/icons/symbol-defs.svg';
-import Media from 'react-media';
 
 export const Navigation = () => {
     return (

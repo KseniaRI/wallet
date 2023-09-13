@@ -7,7 +7,7 @@ const RegistrationPage = () => {
         <>
             <LeftBackground/>
             <RightBackground>
-                    <RegistrationForm/>
+                <RegistrationForm/>
             </RightBackground>
         </>
     )

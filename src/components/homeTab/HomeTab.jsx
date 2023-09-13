@@ -1,14 +1,15 @@
+import { useState } from "react";
+import Media from 'react-media';
 import { ButtonAddTransactions } from "components/buttons/buttonAddTransactions/ButtonAddTransactions";
 import { TransactionTable } from "components/transactionTable/TransactionTable";
 import ModalAddTransaction from "components/modals/modalAddTransaction/ModalAddTransaction";
-import { useState } from "react";
-import { HomeWrap } from "./Home.styled";
-import Media from 'react-media';
 import { TransactionList } from "components/transactionList/TransactionList";
+import { HomeWrap } from "./Home.styled";
 
 const Home = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    
     const toggleModal = () => {
         setIsModalOpen(state => !state);
     };

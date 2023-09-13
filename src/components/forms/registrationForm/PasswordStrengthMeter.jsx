@@ -19,17 +19,18 @@ const createPasswordLabel = (result) => {
   }
 
 const PasswordStrengthMeter = ({password}) => {
-    const testedResult = zxcvbn(password);
     
-    return (
-        <PasswordStrengthMeterWrap>
-            <PasswordStrengthMeterProgress
-                className={createPasswordLabel(testedResult)}
-                value={testedResult.score}
-                max="4"
+  const testedResult = zxcvbn(password);
+    
+  return (
+      <PasswordStrengthMeterWrap>
+        <PasswordStrengthMeterProgress
+          className={createPasswordLabel(testedResult)}
+          value={testedResult.score}
+          max="4"
         />
-      </PasswordStrengthMeterWrap >
-      )
+    </PasswordStrengthMeterWrap >
+  )
 };
 
 export default PasswordStrengthMeter;

@@ -3,7 +3,6 @@ import moment from 'moment';
 import { renderMobileInput } from 'utils/renderInput/RenderInput';
 import { nanoid } from 'nanoid';
 
-
 const DATE_FORMAT = 'DD.MM.YYYY';
 const idDate = nanoid();
 
@@ -17,6 +16,7 @@ const FormikDateTime = ({ field, form, timeFormat }) => {
     // otherwise it returns a moment object
     // this is why we can't override DateTime's onChange
     // prop with Formik's field.onChange
+    
     if (value instanceof moment) {
       dateValue = moment(value).format(DATE_FORMAT);
     }

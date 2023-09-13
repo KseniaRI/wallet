@@ -1,15 +1,15 @@
 import { Suspense, useEffect } from "react"
 import { Outlet } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import Media from 'react-media';
+import { ToastContainer } from "react-toastify";
 import { Header } from "components/header/Header"
 import { SideBar } from "components/sideBar/SideBar"
-import { DashboardContainer, Section } from "./DashboardPage.styled"
 import { Box } from "components/Box"
-import { useDispatch } from "react-redux"
 import { fetchCurrentUser } from "redux/auth/auth-operations"
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import { Loader } from "components/loader/Loader";
-import Media from 'react-media';
+import 'react-toastify/dist/ReactToastify.css';
+import { DashboardContainer, Section } from "./DashboardPage.styled"
 
 const DashboardPage = () => {
     const dispatch = useDispatch();

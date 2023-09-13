@@ -7,7 +7,7 @@ const LoginPage = () => {
         <>
             <LeftBackground/>
             <RightBackground>
-                    <LoginForm/>
+                <LoginForm/>
             </RightBackground>
         </>
     )

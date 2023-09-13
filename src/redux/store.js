@@ -5,7 +5,6 @@ import storage from "redux-persist/lib/storage";
 import { authSlice } from "./auth/auth-slice";
 import { transactionsReducer } from "./transactions/transactions-slice";
 
-
 const middleware = [...getDefaultMiddleware({
     serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],

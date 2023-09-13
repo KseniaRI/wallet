@@ -1,18 +1,21 @@
+import { useState } from "react";
+import Media from 'react-media';
+import { useSelector } from "react-redux";
 import { Box } from "components/Box";
-import { ButtonLogout, HeaderContainer, StyledHeader, Svg } from "./header.styled";
 import Sprite from '../../images/icons/symbol-defs.svg';
 import { Logo } from "components/logo/Logo";
-import { useSelector } from "react-redux";
 import { getAvatarURL, getUserName } from "redux/auth/auth-selectors";
 import { Loader } from "components/loader/Loader";
 import ModalLogout from "components/modals/modalLogout/ModalLogout";
-import { useState } from "react";
-import Media from 'react-media';
+import { ButtonLogout, HeaderContainer, StyledHeader, Svg } from "./header.styled";
 
 export const Header = () => {
+
     const userName = useSelector(getUserName);
     const avatarURL = useSelector(getAvatarURL);
+
     const [isModalOpen, setIsModalOpen] = useState(false);
+    
     const toggleModal = () => {
         setIsModalOpen(state => !state);
     };

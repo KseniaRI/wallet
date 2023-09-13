@@ -1,5 +1,5 @@
-import { Currency } from 'components/currency/Currency';
 import Media from 'react-media';
+import { Currency } from 'components/currency/Currency';
 
 export const CurrencyTab = () => {
     return (

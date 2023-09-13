@@ -8,5 +8,6 @@ export default function PublicRoute({
 }) {
   const isLoggedIn = useSelector(getIsLoggedIn);
   const shouldRedirect = isLoggedIn && restricted;
+  
   return shouldRedirect ? <Navigate to='/dashboard/home' /> : Component;
 }

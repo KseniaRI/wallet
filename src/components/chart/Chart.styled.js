@@ -12,19 +12,18 @@ export const Expenses = styled.span`
 `;
 
 export const StyledDoughnut = styled(Doughnut)`
-width: 280px;
-height: 280px;
-margin-bottom: 30px;
+    width: 280px;
+    height: 280px;
+    margin-bottom: 30px;
 
-@media screen and (min-width: 768px) {
-   width: 320px;
-   height: 320px;
-   margin-bottom: 0;
+    @media screen and (min-width: 768px) {
+       width: 320px;
+       height: 320px;
+       margin-bottom: 0;
     }
-
 `;
 
 export const DoughnutWrap = styled.div`
-position: relative;
-z-index: 1;
+    position: relative;
+    z-index: 1;
 `;

@@ -1,7 +1,6 @@
 import { addClass } from "utils/addClass"
 import { FieldName, TransactionField } from "./TransactionCard.styled"
 
-
 export const TransactionCard = ({ transaction }) => {
 
     return (

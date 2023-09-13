@@ -29,22 +29,22 @@ export const NavItem = styled.li`
 `;
 
 export const Svg = styled.svg`
-margin-right: 23px;
-width: 18px;
-height: 18px;
-color: ${p => p.theme.colors.iconColor}; 
-fill: currentColor;
-transition:  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: 23px;
+    width: 18px;
+    height: 18px;
+    color: ${p => p.theme.colors.iconColor}; 
+    fill: currentColor;
+    transition:  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    ${StyledNavLink}.active &{
-     fill: ${p => p.theme.colors.accentColor};
-     filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
-    }
+        ${StyledNavLink}.active &{
+            filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
+            fill: ${p => p.theme.colors.accentColor};
+        }
 
-    ${NavItem}:hover &,
-    ${NavItem}:focus & {
-     fill: ${p => p.theme.colors.accentColor};
-     filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
-    }
+        ${NavItem}:hover &,
+        ${NavItem}:focus & {
+            fill: ${p => p.theme.colors.accentColor};
+            filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
+        }
 `;
 
